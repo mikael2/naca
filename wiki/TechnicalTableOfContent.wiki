@@ -5,8 +5,4 @@
 * [NacaTechnicalDescription Naca Technical Description ]
     * [CommonParametersToAllExecutionEnvironments Common configuration parameters]    
     * [BatchExecutionModeCustomSettings Batch configuration]    
-    * [ArticlesStyle CSS and style]    
-    * [ArticlesTips Tips and tricks]  
-* [DOMReference DOM reference]  
-* [HTMLElements HTML reference]  
-* [CSSReference CSS reference]
+   
