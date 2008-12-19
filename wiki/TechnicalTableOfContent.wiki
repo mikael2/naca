@@ -8,4 +8,6 @@
     * [BatchExecutionModeCustomSettings Batch configuration]    
          * [Accounting Accounting]
          * [GarbageCollectionTuning Garbage collection tuning] 
+         * [SQLConnectionsAndConnectionPooling SQLConnections and connection pooling]
+
    
