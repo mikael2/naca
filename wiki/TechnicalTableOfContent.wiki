@@ -1,4 +1,4 @@
-#pagename Table content
+#summary Table content
 #sidebar NacaTechnicalTOC
 
 <wiki:toc max_depth="2" />
