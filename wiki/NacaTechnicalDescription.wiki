@@ -1,0 +1,293 @@
+#summary This page is the main header chapter of Naca technical description
+<h1>1. Introduction</h1>
+
+NacaRT is configured by a main configuration file: nacaRT.cfg
+The purpose of this file is to give variuos settings used during nacaRT runtime.
+It sets items like:
+- Path and file name
+- Log settings
+- Db connection informationsc
+- Cache activation
+- ...
+
+Some settings are mandatory, some are optional. If it's optionnal, then the default value is indicated.
+
+This file is critical to the correct execution. It must not be modified without a deep understanding.
+
+Some settings are usefull only in some execution mode. It's particulary true for specific online settings that are unsusable for batch programs.
+The parameters are grouped by such usage.
+
+<h1>2. Notation</h1>
+
+This is a XML file.
+The notation used for all settings is given using the following syntax:
+{{{
+[tag_name/]+ parameter_name
+}}}
+
+Exemple XML file:
+{{{
+<conf 
+    XSLFilePath="..."
+    <GCThread
+        ActivateThreadGarbageCollectorStatement="..."
+    />
+/>
+}}}
+is expressed as 
+- {{{conf/XSLFilePath}}}
+- {{{conf/GCThread/ActivateThreadGarbageCollectorStatement}}}
+
+<h1>3 Sample</h1>
+
+The following path, db and ldap identifications are faked. This XML configuration file is for a Linux system.
+
+<h2> 3.1 Online Sample</h2>
+
+{{{
+<conf 	
+	XSLFilePath="/opt/apps/pub/webapps/Naca/ideaScript.xsl" 
+	HelpXSLFilePath="/opt/apps/pub/webapps/Naca/help.xsl" 
+	ResourcePath="/opt/apps/pub/webapps/Naca/WEB-INF/lib/Resources" 
+	SequencerFactoryClass="idea.onlinePrgEnv.OnlineProgramLoaderFactory" 
+	XMLFrameFilePath="/opt/apps/pub/webapps/Naca/xmlPageScript.xml"
+	LogSettingsPathFile="/opt/apps/pub/webapps/Naca/WEB-INF/LogSettings.cfg"
+	
+	PreLoadAllProgramFromDir="false"
+	PreLoadAllProgramFromList="true"
+	KeepPreloadedProgramList="false"
+	PreLoadProgramList="/opt/apps/pub/webapps/Naca/WEB-INF/ProgramList.xml"
+	AsynchronousPreloadPrograms="true"
+	GCAfterPreloadPrograms="true"
+	
+	EmulWebRootPath=""
+	UseProgramPool="true"
+	UseSQLStatementCache="true"
+	UseSQLObjectCache="true"
+	UseVarFillCache="true"
+	ManageVarDefCatalog="true"
+	CacheResourceFiles="false"
+
+	MaxSessionExecTime_ms="120000"
+	HttpSessionMaxInactiveInterval_s="10800"
+
+	ApplicationClassPath="/opt/apps/pub/webapps/Naca/WEB-INF/lib/pub2000"
+
+	JarFile="Application.jar"
+	CanLoadJar="true"
+	CanLoadClass="true"
+
+	MaxSizeMemPoolCodeCache_Mb="64"
+	MaxSizeMemPoolPermGen_Mb="300"
+	
+	TomcatStartCommand="./opt/apps/pub/start_tomcat"
+
+	ServerName="PROD1b"
+	LDAPServer="LDAP1.company.com"
+	LDAPServer2="LDAP2.company.com"
+	LDAPServer3="LDAP3.company.com"
+	LDAPRootOU="OU=MY_OU,DC=MY_DC,DC=MYDCDC"
+	LDAPGenericUser="LDAP_USER"
+	LDAPGenericPassword="LDAP_PASSWORD"
+
+	AppLauncherConfig="/opt/apps/pub/webapps/Naca/WEB-INF/CustomAppLauncher.cfg"
+	
+	CodeJavaToDb="255-159,10-133"
+	CodeDbToJava="159-255"
+	
+	ComparisonMode="EBCDIC"
+	
+	StandardCalendar="/opt/apps/pub/webapps/Naca/WEB-INF/StandardCalendar.xml"
+	CustomCalendar="/opt/apps/pub/webapps/Naca/WEB-INF/CustomCalendar.xml"
+>
+
+	<GCThread
+		ActivateThreadGarbageCollectorStatement="true"	
+		GarbageCollectorStatement_ms="300000"
+		MaxPermanentHeap_Mo="3500"
+		NbStatementForcedRemoved="0"
+		NbSystemGCCall="1"
+		NbStatementsToRemoveBeforeGC="500000"
+	/>
+
+	<Accounting
+		MachineId="NACA1"
+		TomcatId="TOMCAT1"
+		TableName="SY0330"
+		MaxLevelDepth="0"
+		dburl="jdbc:db2://DBURL/TOTO:" 
+		dbuser="DBUSER"
+		dbpassword="DBPASSWORD"
+		dbConnectionUrlOptionalParams="clientProgramName=$FoundPoolName;"
+		dbenvironment="DB_ENV"
+		driverClass="com.ibm.db2.jcc.DB2Driver"
+		CloseCursorOnCommit="true"
+		AutoCommit="true"
+		validationQuery="select * from SYSIBM.SYSDUMMY1"
+	>
+		<Pools>
+			<Pool Name="Accounting" ProgramId="Accounting" MaxConnection="20" TimeBeforeRemoveConnection_ms="1200000" MaxStatementLiveTime_ms="1200001" UseExplain="false"/>
+		</Pools>
+	</Accounting>
+
+	<DebugLoadTest
+    	LogAllSQLException="true"
+	/>
+
+	<SequencerConfig	
+		TransIDMappingFilePath="/opt/apps/pub/webapps/Naca/WEB-INF/lib/Resources/TransIDMapping.xml"
+		TranslationFilePath="/opt/apps/pub/webapps/Naca/WEB-INF/lib/Resources/Translations.xml"
+	>
+		<StartPrograms>
+			<Program name="ZX15T50" delaySeconds="300"/>
+			<Program name="ZX42V05" delaySeconds="300"/>
+			<Program name="ZX55B05" delaySeconds="300"/>
+			<Program name="ZX7AH7B" delaySeconds="300"/>
+			<Program name="ZX7BD91" delaySeconds="300"/>
+		</StartPrograms>
+
+		<MailConfig 
+			addressFrom="alert-nacaPROD1@consultas.ch"
+			smtpServer="smtp.intra.consultas.ch"
+			title="NACA-Online-PROD1"
+		>
+			<addressTo  email="user1@company.com"/>
+			<addressTo  email="user2@company.com"/>
+			<addressTo  email="user3@company.com"/>
+		</MailConfig>
+
+		<CESMConfig 
+			StartProgramId="ZX01G01"
+			StartCommandCode="XCTL"
+			HelpCenterClassName="pub2000Utils.help.HelpCenter"
+		>
+			<Config
+				StartBatchPrefix="P"
+				StartBatchHostTest="false"
+				StartBatchHostFtpUrl="???"
+				StartBatchHostFtpUser="???"
+				StartBatchHostFtpPassword="???"
+				StartBatchHostFtpSiteCommand="???"
+				StartBatchLinuxFtpUrl="???"
+				StartBatchLinuxFtpUser="???"
+				StartBatchLinuxFtpPassword="???"
+				StartBatchLinuxFtpDirectory="???"
+				StartBatchLinuxSshCommand="???"
+				StartBatchLinuxSshPath="???"
+				StartBatchLinuxSshUser="???"
+			/>
+		</CESMConfig>	
+		
+		<SQLConfig
+			dburl="jdbc:db2://DB_URL2/DFSAFDSA:" 
+			dbuser="DBUSER2"
+			CryptKey="DBCRYPTKEY"
+			CryptedDbpassword="DBCRYPTEDPASSWORD"
+			dbConnectionUrlOptionalParams="currentPackageSet=NACA;keepDynamic=yes;clientProgramName=$FoundPoolName;"
+			dbenvironment="DBENV"
+			driverClass="com.ibm.db2.jcc.DB2Driver"
+			CloseCursorOnCommit="true"
+			AutoCommit="false"
+			validationQuery="select * from SYSIBM.SYSDUMMY1"
+		>
+			<Pools>
+				<Pool Name="Generic" ProgramId="" MaxConnection="100" TimeBeforeRemoveConnection_ms="1200000" MaxStatementLiveTime_ms="1200001" UseExplain="false"/>
+				<Pool Name="RS7AS70" ProgramId="ZX7AS70" MaxConnection="1" TimeBeforeRemoveConnection_ms="1200000" MaxStatementLiveTime_ms="1200001" UseExplain="false"/>
+				<Pool Name="RS7CS70" ProgramId="ZX7CS70" MaxConnection="1" TimeBeforeRemoveConnection_ms="1200000" MaxStatementLiveTime_ms="1200001" UseExplain="false"/>
+				<Pool Name="RS7CS70" ProgramId="ZX7FGHJ" ParentProgramId="RS74M11" MaxConnection="1" TimeBeforeRemoveConnection_ms="1200000" MaxStatementLiveTime_ms="1200001" UseExplain="false"/>
+				<Pool Name="RS7DS70" ProgramId="RS7TD70" MaxConnection="1" TimeBeforeRemoveConnection_ms="1200000" MaxStatementLiveTime_ms="1200001" UseExplain="false"/>				
+			</Pools>
+			<ConnectionKillerSQLCodes>
+				<ConnectionKillerSQLCode Value="-9999"/>
+			</ConnectionKillerSQLCodes>
+		</SQLConfig>
+	</SequencerConfig>
+</conf>
+}}}
+
+<h2>3.2 Batch Sample</h2>
+
+{{{
+<conf
+	LogSettingsPathFile="/opt/apps/batch/libs/java/LogSettings.cfg"
+	SequencerFactoryClass="nacaLib.batchPrgEnv.BatchProgramLoaderFactory"
+
+	UseProgramPool="true"
+	UseSQLStatementCache="true"	
+	UseSQLObjectCache="true"
+	UseVarFillCache="true"
+	ManageVarDefCatalog="true"
+
+	ApplicationClassPath="/opt/apps/batch/libs/java/"	
+	JarFile="Application.jar"
+	CanLoadJar="true"
+	CanLoadClass="true"
+
+	TempDir="/opt/apps/batch/sort_tmp"
+	DynamicAllocationPath="/opt/apps/batch/data/"
+	
+	CodeJavaToDb=""
+	CodeDbToJava=""
+	
+	ComparisonMode="ASCII"
+	
+	SQLInsertStatementBatchSize="100"
+>
+
+	<GCThread
+		ActivateThreadGarbageCollectorStatement="false"
+		GarbageCollectorStatement_ms="300000"
+		MaxPermanentHeap_Mo="800"
+		NbStatementForcedRemoved="100"
+	/>
+
+	<Accounting
+		MachineId="MACHINEID"
+		TomcatId="batch"
+		TableName="SY0330"
+		MaxLevelDepth="0"
+		dburl="jdbc:db2://DB_URL/TZTT:" 
+		dbuser="DBUSER" 
+		dbpassword="DBPASSWORD"
+		dbConnectionUrlOptionalParams="clientProgramName=$FoundPoolName;"
+		dbenvironment="DB_ENV"
+		driverClass="com.ibm.db2.jcc.DB2Driver"
+		CloseCursorOnCommit="true"
+		AutoCommit="true"
+		validationQuery="select * from SYSIBM.SYSDUMMY1"
+	>
+		<Pools>
+			<Pool Name="Accounting" ProgramId="Accounting" MaxConnection="1" TimeBeforeRemoveConnection_ms="1200000" MaxStatementLiveTime_ms="1200001" UseExplain="false"/>
+		</Pools>
+	</Accounting>
+
+	<SequencerConfig>		
+		<MailConfig 
+			addressFrom="alert-naca@company.com"
+			smtpServer="smtp.intra.company.com"
+			title="NACA-Pub2000-Batch-VALT-UDB-batchvali"
+		>
+			<addressTo  email="user1@company.com"/>
+			<addressTo  email="user2@company.com"/>
+			<addressTo  email="user3@company.com"/>			
+		</MailConfig>
+
+		<SQLConfig
+			dburl="jdbc:db2://DBURL2/GFDGD:" 
+			dbuser="DBUSER" 
+			dbpassword="DBPASSWORD"
+			dbConnectionUrlOptionalParams="clientProgramName=$FoundPoolName;"
+			dbenvironment="PROD"
+			driverClass="com.ibm.db2.jcc.DB2Driver"
+			CloseCursorOnCommit="true"
+			AutoCommit="false"			
+			validationQuery="select * from SYSIBM.SYSDUMMY1"
+		>
+			<Pools>
+				<Pool Name="Generic" ProgramId="" MaxConnection="1" TimeBeforeRemoveConnection_ms="1200000" MaxStatementLiveTime_ms="1200001" UseExplain="false"/>
+			</Pools>
+		</SQLConfig>
+	</SequencerConfig>
+</conf>
+
+}}}
