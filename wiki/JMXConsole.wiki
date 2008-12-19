@@ -1,0 +1,62 @@
+#summary JMX Console.
+
+NacaRT uses JMX for action reporting and adminitration during runtime.
+This console is activated for Online execution mode. It is not available in batch or stored procedure mode.
+
+The following operations are available:
+- Memory consumption display 
+- Application resource usage statics display and operation
+
+<h1>JMX Console</h1>
+
+The hosting tomcat server waits for JMX client requests on a specific port identified by a JVM command line parameter:
+{{-Dcom.sun.management.jmxremote.port=xxx}} where xxx is the port used for requests handling.
+
+The JMX console is described by Sun documentation.
+
+<h1>Memory consumption</h1>
+
+The Memory tab on the JMX console gives informations on the various types of memory.
+There 5 different memory pools, grouped in 2 main categories:
+- Heap memory pools
+-- Memory Pool "Eden space"
+-- Memory Pool "Survivor space"
+-- Memory Pool "Tenured gen"
+
+- Non-heap pools
+-- Code Cache
+-- Perm Gen
+
+<h2>Memory usage sumup</h2>
+
+An object is freed form memory when it's not refered to anymore. That is when no other object references it. The garbage collector is a JVM internal 
+thread that activates asynchronously when required by the JVM. It detects the objects that are not used anymore dans refress their memory block, so that this storage space becomes avaible for other objects usages.
+Some of these operations are non blocking, which is good, as it has a small impact on server execution time.
+However, some other operations are blocking. That is bad, as it means that user requests are suspending, thus takes a longer time to be processed.
+A great deal of nacaRT implementation is to minimize these blocking garbage collection. It is not possible to avoid at all these periods, but they are minimized at most by using caching strategies. NacaRT uses large amount of memory for caching and object reuse. 
+
+<h2>Heap memory pools</h2>
+
+These pools are used by the JVM to store java data objects. 
+The Eden space is used for storing only short-lived objects. It's garbage collectet often. It's not a blocking one, and is named "Copy" in the JMX console. the purpose is to remove temporary used objects, or the send them to the "Survivor space" heap.
+This space can vary from 0 byte to 2.5 Gb in 1 or 2 minutes, as a lot of small objects are allocated and destoy very fast.
+
+The "survivor space" contains objects with a middle to long live time. It size is not large and vary from 0 to 200 Mb.
+
+The "tenured gen" is the pool that holds long term objects. For example, sql prepared statements are stored in caches associated with the db sql connection. The object may live all day long, if they are used often enough. In that case, these objects won't be removed form this pool.
+However, if the sql prepared statement is not re-used within a certain amount of time, the nacaRT internal GC thread will detect that it's obsolete and will take it out of this cache. thus, when the JVM garbage collector thread will activates, it will free the memory blocks used by the prepared statement. This operation is blocking !
+
+<h2>Non-heap momory pools</h2>
+
+These pools are used to store java code, not data. Java code is loaded in memory by a class loader which loads in memory the .class binary code.
+This code is managed almost a data: it's also garbage collected. There is only 2 pools:
+- "Code cache" that holds short lived code classes.
+- "Perm gen" that holds long lived code classes.
+In the case of cobol like programs, they are all cached by nacaRT, thus are have a natural tendency to live a long time. Thus, they are transfered by the JVM garbage collector to the "Perm gen" pool.
+This is hopefully not a blocking operation.
+
+
+<h2>JMX console displays</h2>
+All these 5 pools current level are displayed in the tab "Memory" of the JMX console. The garbage collection times is also displayed.
+
+
