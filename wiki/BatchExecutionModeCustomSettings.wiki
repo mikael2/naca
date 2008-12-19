@@ -1,4 +1,5 @@
 #summary Batch settings.
+#labels Technical,1.
 
 These settings are used only by batch programs.
 
