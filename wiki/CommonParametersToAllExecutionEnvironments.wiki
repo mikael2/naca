@@ -1,5 +1,5 @@
 #summary Configuration common parameters
-#labels Technical,1
+#labels Technical,1.1
 All nacaRT shares some settings, whatever their execution mode (online, batch, stored procedure)
 This pages and it's children describes all these settings.
 
