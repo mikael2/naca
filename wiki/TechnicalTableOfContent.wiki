@@ -3,7 +3,7 @@
 <wiki:toc max_depth="2" />
 
 * [NacaTechnicalDescription Naca Technical Description ]
-    * [ArticlesXSS Web security]    
+    * [CommonParametersToAllExecutionEnvironments Common configuration parameters]    
     * [ArticlesDom DOM manipulation]    
     * [ArticlesStyle CSS and style]    
     * [ArticlesTips Tips and tricks]  
