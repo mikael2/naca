@@ -50,7 +50,7 @@ Typically set to "select * from SYSIBM.SYSDUMMY1".
 
 <h1>Connection pooling</h1>
 
-Connection pooling parameters are described in tag <Pool> of <Pools> of <SQLConfig>, inside tag <SequencerConfig>, itself inside tag <conf>.
+Connection pooling parameters are described in tag {{{<Pool>}}} of {{{<Pools>}}} of {{{<SQLConfig>}}}, inside tag {{{<SequencerConfig>}}}, itself inside tag {{{<conf>}}}.
 These pools are defined as accounting connections pools, but are not mixed.
 
 All nacaRT DB connections are pooled internally. This includes the accounting connections.
