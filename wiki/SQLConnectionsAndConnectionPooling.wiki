@@ -3,8 +3,8 @@
 SQL connections are pooled for performance reasons.
 There can be a connection pool by program.
 
-The DB connection parameters are described in tag <SQLConfig>, inside tag <SequencerConfig>, itself inside tag <conf>.
-The connection pools are described within a tag <Pools>.
+The DB connection parameters are described in tag {{{<SQLConfig>}}}, inside tag {{{<SequencerConfig>}}}, itself inside tag {{{<conf>}}}.
+The connection pools are described within a tag {{{<Pools>}}}.
 These application pools must not be confused with the accounting pool.
 
 <h1>DB Connection</h1>
