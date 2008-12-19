@@ -1,4 +1,4 @@
-#summary Bacth settings.
+#summary Batch settings.
 
 These settings are used only by batch programs.
 
