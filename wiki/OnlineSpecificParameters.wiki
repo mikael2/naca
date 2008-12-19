@@ -54,17 +54,17 @@ Generic LDap password
 
 <h1>Transaction definition and translation support</h1>
 
-These resources are defined in the tag <SequencerConfig> of tag <conf>.
+These resources are defined in the tag {{{<SequencerConfig>}}} of tag {{{<conf>}}}.
 
 {{{conf/SequencerConfig/TransIDMappingFilePath}}}
 Gives the full path and file name of an XML file that contains mappings between transaction name and 1st program running this transaction.
 The XML file structure is
-{code:xml}
+{{{
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <root>
 	[<transid id="cics_transaction_name" program="program_name"/>] *
 </root>
-{code}
+}}}
 
 This file is then used by nacaRT to identify which program must be run when a transaction has been launched.
 
@@ -74,7 +74,7 @@ Gives the full path and file name of an XML file that contains multilingual text
 <h1>Asynchronously launched programs</h1>
 An optionnal list of program to launch asynchronously can be setup. 
 These programs will be launched after the application server is started.
-They are described by a list of tag <Program> within tag <StartPrograms> within tag <SequencerConfig>, itself with tag <conf>.
+They are described by a list of tag {{{<Program>}}} within tag {{{<StartPrograms>}}} within tag {{{<SequencerConfig>}}}, itself with tag {{{<conf>}}}.
 Each program is run in it's own thread. The thread is created immediatly after server startup, but the program may wait a given number of second before being actually executed.
 
 {{{conf/SequencerConfig/StartPrograms/Program/name}}}
@@ -89,7 +89,7 @@ Number of seconds to wait after having created and launched the custom thread be
 <h1>User login and help</h1>
 
 When a user first connect to the nacaRT, a login screen is displayed on it's browser. This screen is a custom one, as well as the help screen.
-These elements are configured in tag <CESMConfig> of tag <SequencerConfig>, itself within <conf>
+These elements are configured in tag {{{<CESMConfig>}}} of tag {{{<SequencerConfig>}}}, itself within {{{<conf>}}}
 
 {{{conf/SequencerConfig/CESMConfig/StartProgramId}}}
 Gives the name of the first program to launch when a new http session is started by a new user.
@@ -99,4 +99,3 @@ Identifies how this program is executed. It must be set to "XCTL".
 
 {{{conf/SequencerConfig/CESMConfig/HelpCenterClassName}}}
 Gives the full class name of the help program.
-
