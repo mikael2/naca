@@ -18,6 +18,6 @@
 
 == Contact ==
 
-http://google.code.com/u/durand.didier/
-http://google.code.com/u/pjditscheid/
-http://google.code.com/u/naca.team/
+[http://code.google.com/u/durand.didier/ Didier Durand]<br>
+[http://code.google.com/u/pjditscheid/ Pierre-Jean Ditscheid]<br>
+[http://code.google.com/u/naca.team/ Naca Team]<br>
