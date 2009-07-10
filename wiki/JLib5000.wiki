@@ -4,19 +4,13 @@
 
 == Table of Content ==
 
-    [JLib5000 Logger]
-
-      [JLib5100 Usage]
-
-      [JLib5200 Configuration]
-
-      [JLib5300 Sample application]
-
-      [JLib5400 Comments]
-
-      [JLib5500 Tools]
-
-      [JLib5600 DB Tables creation]
+   [JLib5000 Logger]<br>
+      [JLib5100 Usage]<br>
+      [JLib5200 Configuration]<br>
+      [JLib5300 Sample application]<br>
+      [JLib5400 Comments]<br>
+      [JLib5500 Tools]<br>
+      [JLib5600 DB Tables creation]<br>
 
 == Contact ==
 
