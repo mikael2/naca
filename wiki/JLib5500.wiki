@@ -1,0 +1,10 @@
+#summary JLIB - Logger - Tools
+
+= JLib - Logger - Tools =
+
+== Various logger tools ==
+
+ Some tools are available to support jlib logger:
+
+  * STModuleGen.exe is a wizard used to generate custom log event object. It's packaged as a MSI installable file on Windows. Its available on \\c930st3\SystoolsDeliveries\STTools\STModuleGen\Vxxx where vxxx identifies version.
+  * STStudio.exe is a stand alone log viewer, specifically designed for displaying ST6 format. It is available on \\c930st3\SystoolsDeliveries\STTools\STStudio\vxxx where vxxx identifies version.
