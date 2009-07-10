@@ -4,20 +4,17 @@
 
 == Table of Content ==
 
-  [JLib JLib1000]
-    [General description JLib2000]
-
-    [XML Support JLib3000]
-
-    [DB connection pooling JLib4000]
-
-    [Logger JLib5000]
-      [Usage JLib5100]
-      [Configuration JLib5200]
-      [Sample application JLib5300]
-      [Comments JLib5400]
-      [Tools JLib5500]
-      [DB Tables creation JLib5600]
+   [JLib1000 JLib]<br>
+      [JLib2000 General description]<br>
+      [JLib3000 XML Support]<br>
+      [JLib4000 DB connection pooling]<br>
+      [JLib5000 Logger]<br>
+         [JLib5100 Usage]<br>
+         [JLib5200 Configuration]<br>
+         [JLib5300 Sample application]<br>
+         [JLib5400 Comments]<br>
+         [JLib5500 Tools]<br>
+         [JLib5600 DB Tables creation]<br>
 
 == Contact ==
 
