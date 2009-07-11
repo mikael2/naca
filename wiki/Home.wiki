@@ -1,8 +1,6 @@
 #summary Home - Start here
-
-<wiki:toc max_depth="3" />
-
-* [Naca1000 Naca]
+#labels Naca, NacaRT, NacaTrans, JLib, Home, Summary, TOC
+#sidebar
 
 <wiki:toc max_depth="3" />
 
