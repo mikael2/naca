@@ -1,20 +1,23 @@
 #summary JLIB - Start here
+#sidebar JLIBTableOfContent
+
+<wiki:toc max_depth="3" />
 
 = JLib =
 
 == Table of Content ==
 
-   [JLib1000 JLib]<br>
-      [JLib2000 General description]<br>
-      [JLib3000 XML Support]<br>
-      [JLib4000 DB connection pooling]<br>
-      [JLib5000 Logger]<br>
-         [JLib5100 Usage]<br>
-         [JLib5200 Configuration]<br>
-         [JLib5300 Sample application]<br>
-         [JLib5400 Comments]<br>
-         [JLib5500 Tools]<br>
-         [JLib5600 DB Tables creation]<br>
+ * [JLib1000 JLib]
+  * [JLib2000 General description]
+  * [JLib3000 XML Support]
+  * [JLib4000 DB connection pooling]
+  * [JLib5000 Logger]
+   * [JLib5100 Usage]
+   * [JLib5200 Configuration]
+   * [JLib5300 Sample application]
+   * [JLib5400 Comments]
+   * [JLib5500 Tools]
+   * [JLib5600 DB Tables creation]
 
 == Contact ==
 
