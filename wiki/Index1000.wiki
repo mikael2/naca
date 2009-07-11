@@ -2,10 +2,6 @@
 
 <wiki:toc max_depth="3" />
 
-= JLib =
-
-== Table of Content ==
-
 * [JLib1000 JLib]
  * [JLib2000 General description]
  * [JLib3000 XML Support]
