@@ -6,20 +6,14 @@
 
 == Table of Content ==
 
- * [JLib1000 JLib]
-  * [JLib2000 General description]
-  * [JLib3000 XML Support]
-  * [JLib4000 DB connection pooling]
-  * [JLib5000 Logger]
-   * [JLib5100 Usage]
-   * [JLib5200 Configuration]
-   * [JLib5300 Sample application]
-   * [JLib5400 Comments]
-   * [JLib5500 Tools]
-   * [JLib5600 DB Tables creation]
-
-== Contact ==
-
-[http://code.google.com/u/durand.didier/ Didier Durand]<br>
-[http://code.google.com/u/pjditscheid/ Pierre-Jean Ditscheid]<br>
-[http://code.google.com/u/naca.team/ Naca Team]<br>
+* [JLib1000 JLib]
+ * [JLib2000 General description]
+ * [JLib3000 XML Support]
+ * [JLib4000 DB connection pooling]
+ * [JLib5000 Logger]
+  * [JLib5100 Usage]
+  * [JLib5200 Configuration]
+  * [JLib5300 Sample application]
+  * [JLib5400 Comments]
+  * [JLib5500 Tools]
+  * [JLib5600 DB Tables creation]
