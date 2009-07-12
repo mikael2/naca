@@ -1,0 +1,248 @@
+#summary JLib - Logger - Configuration
+#labels JLib, Logger, Configuration
+#sidebar JLibTOC
+= JLib - Logger - Configuration =
+
+== JLib Logger configuration file format settings ==
+
+=== Sample ===
+
+ {{{
+ <?xml version="1.0" encoding="ISO-8859-1"?>
+ <Organisation Id="Sample">
+ 	<Settings GetCallerLocation="true|false">
+ 		<CallLocation Exclude="jlib"/>
+ 		<CallLocation Exclude="nacaLib"/>
+ 	</Settings>
+ 	<LogCenters>
+ 		<LogCenter
+ 			Channel= "Test"
+ 			Enable="True"
+ 			Mode="Console"
+ 			Level="Normal"
+ 			Flow="Any"
+ 			Format="App>%Timestamp (%ThreadName): %Message%CR"
+ 			/>
+ 		<LogCenter
+ 			Channel= "Test"
+ 			Enable="True"
+ 			Mode="FileST6"
+ 			FilePath="D:/Dev/JLogWriterTest/LogOuput/LogFile/"
+ 			FileName="Log.log"
+ 			FileStrategy="BackupOnstart"
+ 			Level="Debug"
+ 			Flow="Trace">
+ 			<Backup
+ 				BackupPath="./LogBackup"
+ 				BackupFileFormat="[BackupDateTime]_Log.NacaRuntime.BakLog"
+ 				MaxBackupFileCount="20"
+ 			/>
+ 		</LogCenter>
+ 		<LogCenter
+ 			Channel= "Test"
+ 			Enable="True"
+ 			Mode="FileRawLine"
+ 			FilePath="D:/Dev/JLogWriterTest/LogOuput/LogRawLine/"
+ 			FileName="RawLine.txt"
+ 			FileStrategy="BackupOnstart"
+ 			Level="Debug"
+ 			Flow="Any">
+ 			<Backup
+ 				BackupPath="./RawLineBackup"
+ 				BackupFileFormat="[BackupDateTime]_Log.NacaRuntime.BakLog"
+ 				MaxBackupFileCount="20"
+ 			/>
+ 		</LogCenter>
+ 		<LogCenter
+ 			Enable="true"
+ 			Channel="Test"
+ 			Mode="Db"
+ 			Level="Debug"
+ 			Flow="Any"
+ 			DbUser="dblog"
+ 			DbPassword="pwd4dblog"
+ 			DbUrl="jdbc:mysql://127.0.0.1/dblog"
+ 			DbProvider="MySQL"
+ 			MasterTable="LogMaster"
+ 			DetailsTable="LogDetails"
+ 			/>
+ 		<LogCenter
+ 			Enable="true"
+ 			Channel="Test"
+ 			Mode="DbFlat"
+ 			Level="Debug"
+ 			Flow="Any"
+ 			DbUser="dblog"
+ 			DbPassword="pwd4dblog"
+ 			DbUrl="jdbc:mysql://127.0.0.1/dblog"
+ 			DbProvider="MySQL"
+ 			Table="Log_Events"
+ 			TableRunId="Log_RunId"
+                        Machine="C930SRV5"
+                        Process="CRAWLER"
+                        RunMode="TLOG"
+                        LogEventDefinitionTable="Log_Definitions"
+                        NbRequestBufferSize="10"
+ 			/>
+ 	</LogCenters>
+ </Organisation>
+ }}}
+
+=== Syntax ===
+
+ {{{
+ <?xml version="1.0" encoding="ISO-8859-1"?>
+ <Organisation Id=String>
+ 	<Settings GetCallerLocation="true|false">
+ 		[<CallLocation Exclude=String/>]*
+ 	</Settings>
+ 	<LogCenters>
+ 		[<LogCenter
+ 			Channel= String
+ 			Enable=Boolean
+                        NbRequestBufferSize=Integer
+                        Asynchronous=Boolean
+                        Mode="Console"  | "FileST6" | "FileRawLine" | "FileSTCheck" | "FileChunk" | "Db"
+                        Level="Critical" | "Important" | "Normal" | "Verbose" | "Debug" | "FineDebug"
+ 			Flow="System" | "Monitoring" | "Trace" | "Any" | "None"
+ 			[Only for Mode=Console or Mode=FileRawLine
+                        Format="Texte|%Message|%ThreadName|%ThreadId|%Timestamp|% StartTime|%CR|%LF"]
+ 			[For File* modes
+ 				FilePath=String
+ 				FileName=String
+ 				FileStrategy="Append" | "BackupOnstart"
+ 				<Backup
+ 					BackupPath="./LogBackup"
+ 					BackupFileFormat=String
+ 					MaxBackupFileCount=Number
+ 			        />]
+                        [For Db Mode
+ 				DbUser=String
+ 				DbPassword=String
+ 				DbUrl=String
+ 				DbProvider="MySQL"|"Oracle"|"DB2"
+ 				MasterTable=String
+ 				DetailsTable= String]
+                        [For DB Flat mode
+ 			        Mode="DbFlat"
+                   		DbUser=String
+ 			        DbPassword=String
+ 			        DbUrl=String
+ 			        DbProvider="MySQL"|"Oracle"|"DB2"
+ 			        Table=String
+ 			        TableRunId=String
+                                Machine=String
+                                Process=String
+                                RunMode=String
+                                LogEventDefinitionTable=String
+ 			/>
+ 		</LogCenter>]*
+ 	</LogCenters>
+ </Organisation>
+ }}}
+
+=== Tag explanations ===
+
+==== Tags ====
+
+  * Settings/GetCallerLocation: True if tack call must be logged; false otherwise
+  * Settings/CallLocation/Exclude: The value give the name of a java package that must be ignored form stack call. Multiple tags may be specified
+  * LogCenters/ LogCenter: There may be multiple tags, each with it's own particularities
+  * LogCenters/ LogCenter / Enable: Boolean that indicates whether the log channel is enable or not
+  * LogCenters/ LogCenter / NbRequestBufferSize: Integer that defines how many requests will be grouped befors being flush on output writers
+  * LogCenters/ LogCenter / Asynchronous: Boolean that defines if the writing operation is done asynchronously or not.
+  * LogCenters/ LogCenter / Channel: Identifies the channel that can be used to send data to this log center. Only log event belonging to the correct channel can be sent by this log writer.
+  * LogCenters/ LogCenter / Mode: Identifies 2 things:
+  * The destination (Console, File or Database)
+  * The formatting for file output
+     Value must belong to: "Console" |"FileST6"|"FileRawLine"|"FileSTCheck" |"FileChunk"|"Db"
+  * LogCenters/ LogCenter / Level: Identifies the minimum level value acceptable for a log line to be written.
+     Value must belong to: "Critical" | "Important" | "Normal" | "Verbose" | "Debug" | "FineDebug"
+  * LogCenters/ LogCenter / Flow: Identifes which flow can be catch by current LogCenter.
+     Value must belong to: "System" | "Monitoring" | "Trace" | "Any" | "None"
+     "Any" indicates that no restriction on flow is done
+     "None" desactivate the current LogCenter: it will never receive any log.
+
+==== Specifics items depending on Mode ====
+
+  * For Console Mode or RawLine Mode:
+    * LogCenters/ LogCenter / Format: format is currently used only by mode="Console".
+       A formatting string can be specified; it can contains embedded variable placeholders:
+    * %Message: Replace by the log message
+    * %ThreadName: Replaced the thread name
+    * %ThreadId: Relaced by the thread id
+    * %Timestamp: Replaced by the time stamp at which log was called; it is different form current time
+    * % StartTime: Number of milliseconds that elapsed since process startup. Determined at log call time
+    * %CR: Carriage return char
+    * %LF: Line feed char
+
+  * For File Mode:
+    * LogCenters/ LogCenter / FilePath: String that give an absolute or relative path where logs files are stored; the path is created is necessary.
+    * LogCenters/ LogCenter / FileName: String that gives the name of the log file; It is created as necessary.
+    * LogCenters/ LogCenter / FileStrategy: "Append" | "BackupOnstart"; Indicates what to do upon process startup with the current (if existing) log file.
+    * LogCenters/ LogCenter / Backup / BackupPath: Path used if "BackupOnstart" Filestrategy is declared for current LogCenter. It is created as necessary
+    * LogCenters/ LogCenter / Backup / BackupFileFormat: File name of the backup file within backup path. The name can contains the reserved keywords:
+      * BackupDateTime: It is replaced at backup time by the current displayable date time in format YYYYMMDD_HHMMSS
+    * LogCenters/ LogCenter / Backup / MaxBackupFileCount: Number of file to keep in backup directory. Only the most recent one are kept, old one are removed definitly.
+
+  * For Database mode (Mode="Db"):
+    * DbUser: String that gives the db connection user
+    * DbPassword: String that gives the db connection password
+    * DbUrl: String that gives the db connection url
+    * DbProvider: Either "MySQL", "Oracle" or "DB2" depending on DB service used
+    * MasterTable: Name of the table used as the log master. the table structure is described below
+
+==== XML parameters ====
+
+  * DbUser must give the name of the DB user to use
+  * DbPassword must give the password of the DB user to use
+  * DbUrl must give the URL of the DB instance to use
+  * DbProvider: one of "MySQL"|"Oracle"|"DB2" (currently, only "MySQL" is supported, other are to be done)
+  * Table: Gives the name of the table used for log event write
+  * TableRunId: Gives the name of the table used to generate a RuntimeId, and a RunId if none are provided at Log.open() time
+  * Machine: Gives the name of the machine execution the process to be logged
+  * Process: Give the name of the process to be logged
+  * RunMode: Gives a string identifying the run mode (TLog / Prod, ...)
+  * LogEventDefinitionTable: Gives the name of the table used for event definition registration
+
+=== Standard log events and events type ===
+
+ There are various already built standard events. All these events must identify the channel they are using.
+ 
+   * LogEventStartProcess: Typed LogEventType.Start; Automatically sent when the logger is started. Nothing to do at the application level.
+   * LogEventStopProcess: Typed LogEventType.Stop; Must be sent when application is being shutdown.
+   * LogEventAbortProcess: Typed LogEventType.Abort; Must be sent when application is being aborted.
+   * LogEventProgress: Typed LogEventType.Progress; Must be sent when an item processing is being progressing, and we want to get a trace of the advancements. 3 parameters are to be provided: int nNbItemsProcessed, int nNbItemsToProcess, String csMessage. The message can be null.
+   * LogEventReport: Typed LogEventType.Report; Must be sent when an item processing is finished. 3 parameters must be provided: int nNbItemsProcessed, int nNbItemsSucessfullyProcess, String csMessage; the message can be null.
+   * LogEventLaunchProcess: Typed LogEventType.Launch; Must be sent before launching another process. 2 other parameters must be provided: , LaunchedRunId, and and optinalMessage. The LaunchedRunId must match the parameter that will be given in the launched process as a RunId in the Log.open() method. This enables log viewers to chain logically the 2 processes.
+   * LogEventAliveProcess: Typed LogEventType.Process; Must be sent to report that the process is alive.
+
+ It is important to use these standard events as required, because they are intended in log viewer application for post execution analysis.
+
+ All these standards events provides 2 different log() methods, with or without a String csProduct argument. If no csProduct is provided, then the default csProduct value given at log.open() time is used, otherwise it's the specified value that is used.
+
+=== Sample custom log object ===
+
+ {{{
+ package net.publigroupe.logEvent;
+ import jlib.log.*;
+ 
+ public class LogEventEndCrawl extends LogEvent
+ {
+ public LogEventEndCrawl(String csProduct)
+ 
+ Unknown macro: { super(LogEventType.Rem, LogFlow.Any, LogLevel.Normal, csProduct); }
+ public static LogEvent log(String csUrl, int nNbMs, String csMessage)
+ {
+ return LogEventEndCrawl.log(null, csUrl, nNbMs, csMessage);
+ }
+
+ public static LogEvent log(String csProduct, String csUrl, int nNbMs, String csMessage)
+
+ Unknown macro: { LogEventEndCrawl event = new LogEventEndCrawl(csProduct); event.fillMember("URL", csUrl); event.fillMember("NbMs", nNbMs); Log.log("Test", event, csMessage); return event; }
+ }
+ }}}
+
+ Explanations: The constructor gives the event type, Flow restriction and minimal level that this log applies to.
+ The first static method log(...) is the log event call using the default product, specified at log.open() time.
+ The second static method log(...) is the log event call using a specific product, replacing the value specified at log.open() time.

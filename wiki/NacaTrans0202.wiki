@@ -1,0 +1,27 @@
+#summary NacaTrans - Tomcat plugin configuration
+#labels NacaTrans, Tomcat plugin configuration
+#sidebar NacaTransTOC
+= NacaTrans - Tomcat plugin configuration =
+
+== Sysdeo configuration ==
+
+ To launch the online sample in Eclipse, you need to install sysdeo plugin (http://www.eclipsetotale.com/tomcatPlugin.html).
+ Server Eclispe plugin for J2EE application is not supported yet, but is planned in a near future.
+
+ The Tomcat preferences (in Eclispe, menu windows/preference) must be declared as:
+
+ <http://NacaSamples3000image01.png>
+
+ <http://NacaSamples3000image02.png>
+
+== NacaRT configuration ==
+
+ NacaRT must be declared as a Tomcat project: right click on NacaRT project, select "properties", and Choose "Tomcat"
+
+ <http://NacaSamples3000image03.png>
+
+== Tomcat configuration ==
+
+ Tomcat context must also by declared (right click on NacaRT project, select "Project Tomcat", then select in popup menu "Update context".
+
+ <http://NacaSamples3000image04.png>

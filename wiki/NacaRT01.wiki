@@ -1,0 +1,257 @@
+#summary NacaRT - JMX Console
+#labels NacaRT, JMX Console
+#sidebar NacaRTTOC
+= NacaRT - JMX Console =
+
+== Introduction ==
+
+ NacaRT uses JMX for action reporting and adminitration during runtime.
+ This console is activated for Online execution mode.
+ It is not available in batch or stored procedure mode.
+
+ The SUN JDK is providing a Windows heavy client Jconsole.
+ JConsole has been used successfully till now.
+ Other LMX consoles are available on Internet.
+
+ The following operations are available:
+  * Memory consumption display
+  * Application resource usage statics display and operation
+
+== JMX Console ==
+
+ The hosting tomcat server waits for JMX client requests on a specific port identified by a JVM command line parameter:
+
+  {{{-Dcom.sun.management.jmxremote.port=xxx}}} where {{{xxx}}} is the port used for requests handling.
+
+ The JMX console is described by Sun documentation.
+
+== Memory consumption ==
+
+=== Memory types ===
+
+ The Memory tab on the JMX console gives informations on the various types of memory.
+
+ There 5 different memory pools, grouped in 2 main categories:
+  * Heap memory pools
+    They are used to handle the Java objects. Their size can vary a lot during runtime.
+
+    * Memory Pool "Eden space"
+      Very recent objects pool. Its size can vary a lot.
+      It is used to store the objects that just have been created.
+      It contains normally only objects having a very short lifetime.
+
+    * Memory Pool "Survivor space"
+      Objects allocated for a certain lifetime.
+
+    * Memory Pool "Tenured gen"
+      Objects having a very long lifetime.
+      It is critical that this pool is not completely loaded to avoid JVM exceptions.
+      JVM parameters allow to provision the pool, according to OS limits.
+      It is very impotant that its size does not go over the maximum amount of memory available to avoid JVM exception ("out of memory" exception).
+
+  * Non-heap pools
+    They are used to handle the Java code programs. They size can vary depending on the number of programs loaded at a special time.
+
+    * Code Cache
+      Pool containing the binary code of the classes recently loaded.
+      It can reach its maximum size, this will launch automatically a garbage collector.
+
+    * Perm Gen
+      Pool containing the binary code of the classes loaded for a certain amount of time.
+      The goal of the class loader is to load/unload software objects in/out of the pool.
+      It is critic that this pool is not completely loaded to avoid JWM wxceptions.
+      A parameter {{{-XX:MaxPermSize=???m}}} allows to define the maximum limit in Mo, according to the OS.
+
+ The garbage collector mechanism can be used from this interface.
+ This is very useful to check the memory allocated.
+ This however should not be done during at production time.
+
+ The details of the history of the memory usage is available by clicking one of the green vertical ascensors.
+
+=== Memory usage sumup ===
+
+ An object is freed form memory when it's not refered to anymore.
+ That is when no other object references it.
+ The garbage collector is a JVM internal thread that activates asynchronously when required by the JVM.
+ It detects the objects that are not used anymore dans refress their memory block, so that this storage space becomes avaible for other objects usages.
+ Some of these operations are non blocking, which is good, as it has a small impact on server execution time.
+ However, some other operations are blocking.
+ That is bad, as it means that user requests are suspending, thus takes a longer time to be processed.
+ A great deal of nacaRT implementation is to minimize these blocking garbage collection.
+ It is not possible to avoid at all these periods, but they are minimized at most by using caching strategies.
+ NacaRT uses large amount of memory for caching and object reuse.
+
+=== Heap memory pools ===
+
+ These pools are used by the JVM to store java data objects.
+ The Eden space is used for storing only short-lived objects.
+ It's garbage collectet often. It's not a blocking one, and is named "Copy" in the JMX console.
+ The purpose is to remove temporary used objects, or the send them to the "Survivor space" heap.
+ This space can vary from 0 byte to 2.5 Gb in 1 or 2 minutes, as a lot of small objects are allocated and destoy very fast.
+
+ The "survivor space" contains objects with a middle to long live time. It size is not large and vary from 0 to 200 Mb.
+
+ The "tenured gen" is the pool that holds long term objects.
+ For example, sql prepared statements are stored in caches associated with the db sql connection.
+ The object may live all day long, if they are used often enough.
+ In that case, these objects won't be removed form this pool.
+ However, if the sql prepared statement is not re-used within a certain amount of time, the nacaRT internal GC thread will detect that it's obsolete and will take it out of this cache.
+ Thus, when the JVM garbage collector thread will activates, it will free the memory blocks used by the prepared statement.
+ This operation is blocking !
+
+=== Non-heap memory pools ===
+
+ These pools are used to store java code, not data.
+ Java code is loaded in memory by a class loader which loads in memory the {{{.class binary code.}}}
+ This code is managed almost a data: it's also garbage collected.
+
+ There are only 2 pools:
+  * "Code cache" that holds short lived code classes.
+  * "Perm gen" that holds long lived code classes.
+
+ In the case of cobol like programs, they are all cached by nacaRT, thus are have a natural tendency to live a long time.
+ Thus, they are transfered by the JVM garbage collector to the "Perm gen" pool.
+ This is hopefully not a blocking operation.
+
+=== JMX console displays ===
+
+ All these 5 pools current level are displayed in the tab "Memory" of the JMX console.
+ The garbage collection times is also displayed.
+
+=== Threads ===
+
+ The details about the active threads can be displayed.
+ 
+ The details on the execution of a thread can be displayed by clicking on an entry of the list "live thread".
+
+=== Classes ===
+
+ The number of the classes loaded and unloaded can be displayed anytime. 
+ Especially, the unload action of the programs and the "copys" can be displayed here.
+
+=== VM ===
+
+ The different JVM parameters are displayed.
+
+== Specific elements ==
+
+=== MBean Tomcat and JVM standards ===
+
+ Some MBeans are generated by Tomcat when running in this mode.
+
+=== MBean specific to NacaRT ===
+
+ NacaRT is generating a certain amount of MBeans (JMX applicative administration components JMX) that are used to display the internal server status and allow the change of several parameters.
+ It is possible to modify the MBeans using buttons in the tab "Operations" in the JConsole tool.
+
+===  Configuration of a log: format (xxx) ===
+
+ Definition of the parameters of the log for the xxx output.
+ The can be several log outputs, resulting in having several MBeans whose names are displayed between parenthesis.
+ As an example (Console), (FileST6), (FileSTCheck) corresponding to each of the log outputs defined in the log config file.
+ It is possible to change the following output parameters:
+  * Activation or deactivation of an log output
+  * Log level change
+
+=== Resources files (_Resources files) ===
+
+ To be used in transactional mode only.
+ Displays the number of documents, files, ressources loaded in the pool ressources.
+ The ressources pool can be reloaded during runtime.
+ The request will be handled asynchronously, depending on the system load. 
+ This can modify one or more ressources files and to see the effect on the build screens without restarting Tomcat.
+ The procedure to update a file ressource is:
+  * Put the new file in the directory indetified by the variable {{{ResourcePath}}} of the configuration file {{{nacaRT.cfg}}}.
+  * Request the ressources reload.
+
+=== Presentation screen ressources (_ XSLTResources) ===
+
+ To be used in transactional mode only.
+ 
+ Displays the number of transformation files loaded in specialized compiled objects for XSLT transformations.
+ We can request to unload them from the memory.
+ The next HTML screen production will reload the transformation files.
+ The request will be handled asynchronously, depending on the system load.
+ This is allowing the modification of one or more ressources files and to see the effect on the presentation screens without restarting Tomcat.
+ The update procedure is:
+  * Put the new transformation file identified by the variable {{{XSLFilePath}}} or {{{HelpXSLFilePath}}} or {{{PSXSLFilePath}}} in the configuration file.
+  * Request the unload of the pooled ressources.
+
+=== General statistics (# GeneralStat) ===
+
+ This screen is providing different statistics on the past acivities.
+ They are low level oriented, and do not have a real interest for the production monitoring and follow up.
+
+ The tab "Operations" is giving access to the following screen:
+
+ The 3 command buttons allow the display ot not, in the left column:
+  * "copy" files present in memory
+  * program files present in memory
+  * current applicative threads
+
+ Display usage is to be reserved in case of emergencies only.
+
+=== Details of the loaded programs (Prog.xxx) ===
+
+ Each program loaded in memory has an entry in the left column. There can be several entries.
+ Each program loaded in memory has an entry as a MBean and is visible in the left column. 
+ There can be several programs loaded in the same time.
+ The following production informations can be displayed:
+  * the number of created instances
+  * the number of running instances
+  * the number of available instances in the pool of programs (that means already executed, and that will have a short execution preparation time)
+  * the total number of executions
+  * the size in character (16 bits) and the working storage section (Cobol)
+  * minimum, maximum and mean execution duration
+  * date/hour of the first and the last execution
+  
+ The tab "Operation" is giving access to a command to dynamically unload a program:
+
+ We can therefore enforce the unload of a program using {{{unloadProgram}}}.
+ This will results in preventing a new execution of program till all the running instances are closed and returned back to the pool.
+ All the instances of the program are destroyed and the code program is unloaded from the memory. 
+ All the execution requests are then allowed again, and the new version will be loaded when necessary.
+ The update procedure at runtime is: 
+  * Update the new {{{.class}}} and its associated paragraphs in the folder identified by the variable {{{ApplicationClassPath}}} in the configuration file.
+    Beware, a program {{{xxx}}} is built of a {{{xxx.class}}} and as many files {{{xxx$nnn.class}}} as there are paragraphs in the program (nnn is a number).
+    All those files have to be updating at the same time.
+  * Request an {{{unloadProgram}}} using the JMX interface.
+
+=== Details of the loaded copy (Copy.xxx) ===
+
+ Each Copy file has a MBean JMX definition.
+ We are displaying the number of programs that are dependant on the Copy.
+ We can unload a Copy.
+ This will result in unloading all the programs that are using the Copy.
+ This must not be done for Copy that are massively used (type ERRZONE), because the system will be locked when all the programs using ERRZONE will be unloaded.
+ The performances will suffer a lot. 
+ However, if a Copy is used only by a few programs, and if they are not or nearly not running at this time, then the time response time will not or will not so much be impacted.
+ The update procedure at runtime is: 
+  * Put the new Copy file in the folder identified by the variable {{{ApplicationClassPath}}} in the configuration file. 
+  * Request an {{{unloadProgram}}} using the JMX interface.
+
+=== Close site handling (# App_Close) ===
+
+Closing the Naca site can be done in two ways:
+- Manually
+- Planned
+
+
+La gestion des fermetures manuelles est réalisée par les écrans JMX suivant:
+
+Le bean # App_Close est affiché quand le site est ouvert. L'onglet "Attributes" donne un résumé des conditions qui définissent le statut d'ouverture:
+A_ApplicationmanualStatus: Etat d'ouverture manuel
+B0_ApplicationStandardStatus: Etat résultant du fichier de configuration de calendrier standard
+B1_ApplicationcustomStatus: Etat résultant du fichier de configuration de calendrier custom
+C_ApplicationCurrentstatus: Etat final d'ouverture du site.
+__ManualCloseReason: Permet de saisir dans le champ "value" une raison pour fermeture manuelle du site. Attention, elle devra être multi-lingue. Ne pas oublier de valider par "Entrée" cette saisie.
+
+L'écran suivant permet de demander la fermeture manuelle immédiate du site, ou le rechargement des fichiers de calendrier:
+
+Gestion des ouvertures du site (# App_Open)
+
+Quand le site est fermé, le bean # App_Close n'est pas affiché, mais par contre c'est # App_Open qui est affiché dans la colonne de gauche. On ne peut donc avoir en même temps # App_Open et # App_Close:
+
+On retrouve les mêmes informations que dans # App_Close.
+
+L'onglet "operations"  est:
