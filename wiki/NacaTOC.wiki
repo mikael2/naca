@@ -4,11 +4,11 @@
 ||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[JLib JLib]||
 
 <wiki:toc max_depth="2"/>
-* [Naca01 Summary]
-* [Naca02 Whitepaper]
- * [Naca0201 Introduction]
- * [Naca0202 Transcoding and runtime concepts]
- * [Naca0203 Required environments]
- * [Naca0204 Tools details]
- * [Naca0205 Testing]
- * [Naca0206 NacaRT Cobol support]
+* [Naca01 Summary]<br>
+* [Naca02 Whitepaper]<br>
+ * [Naca0201 Introduction]<br>
+ * [Naca0202 Transcoding and runtime concepts]<br>
+ * [Naca0203 Required environments]<br>
+ * [Naca0204 Tools details]<br>
+ * [Naca0205 Testing]<br>
+ * [Naca0206 NacaRT Cobol support]<br>
