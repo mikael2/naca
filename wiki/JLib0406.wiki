@@ -1,0 +1,159 @@
+#summary JLib - Logger - DB Tables creation
+
+= JLib - Logger - DB Tables creation =
+
+== Tables creation SQL statement ==
+
+=== Table LOGHEADER ===
+
+ MySQL Syntax:
+
+  {{{
+  CREATE TABLE 'logheader' (
+  'Id' int(10) unsigned NOT NULL auto_increment,
+  'Ins_Date' timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  'Log_Type' int(10) unsigned NOT NULL default '0',
+  'File_Name' varchar(255) character set latin1 collate latin1_bin default NULL,
+  'Line' int(10) unsigned NOT NULL default '0',
+  'Thread' varchar(45) NOT NULL default '',
+  'Method' varchar(255) NOT NULL default '',
+  'StartTime' int(10) unsigned NOT NULL default '0',
+  'Event_Name' varchar(255) NOT NULL default '',
+  'Message' text NOT NULL,
+  PRIMARY KEY ('Id')
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  }}}
+
+ Oracle Syntax:
+
+  {{{
+  CREATE TABLE LOGHEADER
+  (
+  ID NUMBER NOT NULL,
+  INS_DATE DATE DEFAULT sysdate NOT NULL,
+  LOG_TYPE VARCHAR2(40 BYTE) NOT NULL,
+  FILE_NAME VARCHAR2(255 BYTE) NOT NULL,
+  LINE NUMBER NOT NULL,
+  THREAD VARCHAR2(255 BYTE) NOT NULL,
+  METHOD VARCHAR2(255 BYTE) NOT NULL,
+  START_TIME NUMBER NOT NULL,
+  EVENT_NAME VARCHAR2(255 BYTE) NOT NULL,
+  MESSAGE VARCHAR2(4000 BYTE) NOT NULL
+  ) ;
+  }}}
+
+=== Table DETAILSTABLE ===
+
+ This is the table used as the log details
+
+ MySQL Syntax:
+
+  {{{
+  CREATE TABLE 'logdetails' (
+  'Id' int(10) unsigned NOT NULL default '0',
+  'DetailId' int(10) unsigned NOT NULL auto_increment,
+  'Name' varchar(255) NOT NULL default '',
+  'Value' text NOT NULL,
+  PRIMARY KEY ('DetailId')
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  }}}
+
+ Oracle syntax:
+
+  {{{
+  CREATE TABLE LOGDETAILS
+  (
+  ID NUMBER NOT NULL,
+  DETAIL_ID NUMBER NOT NULL,
+  NAME VARCHAR2(255 BYTE),
+  VALUE VARCHAR2(4000 BYTE)
+  ) ;
+  }}}
+
+=== Sequences ===
+
+ Sequences are to be created in Oracle only!
+
+ Oracle syntax:
+
+  {{{
+  CREATE SEQUENCE TSTJAVA.SEQ_LOGDETAIL_ID
+  START WITH 2
+  MAXVALUE 999999999999999999999999999
+  MINVALUE 0
+  NOCYCLE
+  NOCACHE
+  NOORDER;
+
+  CREATE SEQUENCE TSTJAVA.SEQ_LOG_ID
+  START WITH 10
+  MAXVALUE 999999999999999999999999999
+  MINVALUE 0
+  NOCYCLE
+  NOCACHE
+  NOORDER;
+  }}}
+
+=== Flat Database mode ====
+
+ For Flat Database mode (mode="DbFlat"):
+
+  {{{
+  DROP TABLE IF EXISTS `tcopcwl`.`Log_Definitions`;
+  CREATE TABLE `Log_Definitions` (
+  `Event_Name` varchar(255) NOT NULL default '',
+  `Parameter_Name0` varchar(255) default NULL,
+  `Parameter_Name1` varchar(255) default NULL,
+  `Parameter_Name2` varchar(255) default NULL,
+  `Parameter_Name3` varchar(255) default NULL,
+  `Parameter_Name4` varchar(255) default NULL,
+  `Parameter_Name5` varchar(255) default NULL,
+  `Parameter_Name6` varchar(255) default NULL,
+  `Parameter_Name7` varchar(255) default NULL,
+  `Parameter_Name8` varchar(255) default NULL,
+  `Parameter_Name9` varchar(255) default NULL,
+  `Event_Id` int(11) default NULL,
+  `Short_Event_Name` varchar(255) NOT NULL default ''
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+  DROP TABLE IF EXISTS `tcopcwl`.`Log_Events`;
+  CREATE TABLE `tcopcwl`.`Log_Events` (
+  `Machine` varchar(255) NOT NULL default '',
+  `Process` varchar(255) NOT NULL default '',
+  `Run_Mode` varchar(45) NOT NULL default '',
+  `Ins_Date` datetime NOT NULL default '0000-00-00 00:00:00',
+  `Event_Message` text NOT NULL,
+  `Log_Type` varchar(45) NOT NULL default '',
+  `File_Name` varchar(255) NOT NULL default '',
+  `Line` int(10) unsigned NOT NULL default '0',
+  `Thread` varchar(255) NOT NULL default '',
+  `Method` varchar(255) NOT NULL default '',
+  `Start_Time` int(10) unsigned NOT NULL default '0',
+  `Parameter_Value0` varchar(255) default NULL,
+  `Parameter_Value1` varchar(255) default NULL,
+  `Parameter_Value2` varchar(255) default NULL,
+  `Parameter_Value3` varchar(255) default NULL,
+  `Parameter_Value4` varchar(255) default NULL,
+  `Parameter_Value5` varchar(255) default NULL,
+  `Parameter_Value6` varchar(255) default NULL,
+  `Parameter_Value7` varchar(255) default NULL,
+  `Parameter_Value8` varchar(255) default NULL,
+  `Parameter_Value9` varchar(255) default NULL,
+  `Message` text,
+  `Event_Id` int(11) NOT NULL default '0',
+  `Run_Id` varchar(45) default NULL,
+  `Product` varchar(45) default NULL,
+  `Runtime` varchar(45) default NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+  DROP TABLE IF EXISTS 'tcopcwl'.'Log_RunId';
+  CREATE TABLE 'tcopcwl'.'Log_RunId' (
+  'Channel' varchar(255) NOT NULL default '',
+  'RunId' int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY ('Channel','RunId')
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  }}}
+
+  The column Event_Id is used to link an Event to it's definition.
+  It's a hash code of the event name + number of arguments + names of parameters.
+  Thus, it is sufficient to manage versioning.
