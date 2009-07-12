@@ -9,7 +9,6 @@
   * [Naca0204 Tools details]
   * [Naca0205 Testing]
   * [Naca0206 NacaRT Cobol support]
-<wiki:toc max_depth="3" />
 * [NacaTrans NacaTrans]
  * [NacaTrans01 Concept]
   * [NacaTrans0101 Introduction]
@@ -19,11 +18,9 @@
   * [NacaTrans0201 Online sample transcoding]
   * [NacaTrans0202 Eclipse/Tomcat plugin configuration]
   * [NacaTrans0203 Execution]
-<wiki:toc max_depth="3" />
 * [NacaRT NacaRT]
  * [NacaRT01 JMX Console]
  * [NacaRT02 Tests]
-<wiki:toc max_depth="3" />
 * [JLib JLib]
  * [JLib01 General description]
  * [JLib02 XML Support]
@@ -35,6 +32,4 @@
   * [JLib0404 Comments]
   * [JLib0405 Tools]
   * [JLib0406 DB Tables creation]
-  
-  
   
