@@ -1,6 +1,6 @@
 #summary Naca - Summary
 #labels Naca, Summary
-#sidebar HomeTOC
+#sidebar NacaTOC
 = Naca - Summary =
 
  Automatic migration of Cobol to maintainable Java (transcoding + runtime)

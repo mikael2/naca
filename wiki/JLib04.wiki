@@ -1,6 +1,6 @@
 #summary JLib - Logger
 #labels JLib, Logger
-#sidebar HomeTOC
+#sidebar JLibTOC
 = JLib - Logger =
 
   This section is describing the usage of the Jlib - Logger module.

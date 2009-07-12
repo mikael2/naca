@@ -1,6 +1,6 @@
 #summary Naca
 #labels Naca
-#sidebar HomeTOC
+#sidebar NacaTOC
 == Naca ==
 
  The Naca Project is composed of three main modules that are NacaTrans, NacaRT and JLib.

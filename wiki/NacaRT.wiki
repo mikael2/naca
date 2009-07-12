@@ -1,6 +1,6 @@
 #summary NacaRT
 #labels NacaRT
-#sidebar HomeTOC
+#sidebar NacaRTTOC
 == NacaRT ==
 
  NacaRT is the runtime allowing the execution of Cobol transcoded sources.

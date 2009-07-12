@@ -1,6 +1,6 @@
 #summary JLib
 #labels JLib
-#sidebar HomeTOC
+#sidebar JLibTOC
 == JLib ==
 
  JLib is a general Java open source library used by the Naca project.

@@ -1,7 +1,7 @@
 #summary Home - TOC
-#labels TOC,Naca,NacaRT,NacaTrans,JLib
-||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[JLib JLib]||
-
+#labels TOC, Naca, NacaRT, NacaTrans, JLib
+#sidebar
+<wiki:toc max_depth="3" />
 * [Naca Naca]
  * [Naca01 Summary]
  * [Naca02 Whitepaper]
@@ -18,7 +18,7 @@
   * [NacaTrans0103 Sample]
  * [NacaTrans02 Sample]
   * [NacaTrans0201 Online sample transcoding]
-  * [NacaTrans0202 Eclipse - Tomcat plugin configuration]
+  * [NacaTrans0202 Eclipse/Tomcat plugin configuration]
   * [NacaTrans0203 Execution]
 * [NacaRT NacaRT]
  * [NacaRT01 JMX Console]
@@ -34,4 +34,3 @@
   * [JLib0404 Comments]
   * [JLib0405 Tools]
   * [JLib0406 DB Tables creation]
-  
