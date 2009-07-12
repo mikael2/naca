@@ -9,7 +9,7 @@
 
  Transcoding process:
 
- <http://werwerwe>
+ <http://code.google.com/p/naca/wiki/Naca23image01.gif>
 
  Naca deals with Java code generation and execution.
 
