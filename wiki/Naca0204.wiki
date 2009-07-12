@@ -1,6 +1,7 @@
-#summary NacaWhitepaper - Tools details
-
-= NacaWhitepaper - Tools details =
+#summary Naca - Whitepaper - Tools details
+#labels Naca, Whitepaper, Tools details
+#sidebar NacaTOC
+= Naca - Whitepaper - Tools details =
 
 == Cobol to Java transcoder: NacaTrans ==
 

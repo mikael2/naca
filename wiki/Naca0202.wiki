@@ -1,6 +1,7 @@
-#summary NacaWhitepaper - Transcoding and runtime concepts
-
-= NacaWhitepaper - Transcoding and runtime concepts =
+#summary Naca - Whitepaper - Transcoding and runtime concepts
+#labels Naca, Whitepaper, Transcoding and runtime concepts
+#sidebar NacaTOC
+= Naca - Whitepaper - Transcoding and runtime concepts =
 
 == Transcoding process ==
 

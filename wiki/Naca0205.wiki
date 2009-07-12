@@ -1,6 +1,7 @@
-#summary NacaWhitepaper - Testing
-
-= NacaWhitepaper - Testing =
+#summary Naca - Whitepaper - Testing
+#labels Naca, Whitepaper, Testing
+#sidebar NacaTOC
+= Naca - Whitepaper - Testing =
 
 == Introduction ==
 

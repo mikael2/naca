@@ -1,6 +1,7 @@
-#summary NacaWhitepaper - Required environments
-
-= NacaWhitepaper - Required environments =
+#summary Naca - Whitepaper - Required environments
+#labels Naca, Whitepaper, Required environments
+#sidebar NacaTOC
+= Naca - Whitepaper - Required environments =
 
 == Introduction ==
 

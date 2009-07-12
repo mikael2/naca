@@ -1,6 +1,7 @@
-#summary NacaWhitepaper - NacaRT Cobol support
-
-= NacaRT Cobol support =
+#summary Naca - Whitepaper - NacaRT Cobol support
+#labels Naca, Whitepaper, NacaRT Cobol support
+#sidebar NacaTOC
+= Naca - Whitepaper - NacaRT Cobol support =
 
 == Introduction ==
 
