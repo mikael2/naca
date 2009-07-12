@@ -1,5 +1,6 @@
 #summary JLib - Logger - Tools
-
+#labels JLib, Logger, Tools
+#sidebar JLibTOC
 = JLib - Logger - Tools =
 
 == Various logger tools ==

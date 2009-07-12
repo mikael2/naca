@@ -1,5 +1,6 @@
 #summary JLib - Logger - Configuration
-
+#labels JLib, Logger, Configuration
+#sidebar JLibTOC
 = JLib - Logger - Configuration =
 
 == JLib Logger configuration file format settings ==

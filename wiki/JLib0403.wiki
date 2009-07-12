@@ -1,5 +1,6 @@
 #summary JLib - Logger - Sample application
-
+#labels JLib, Logger, Sample application
+#sidebar JLibTOC
 = JLib - Logger - Sample application =
 
 == Sample application ==

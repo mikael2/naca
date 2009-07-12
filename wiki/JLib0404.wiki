@@ -1,5 +1,6 @@
 #summary JLib - Logger - Comments
-
+#labels JLib, Logger, Comments
+#sidebar JLibTOC
 = JLib - Logger - Comments =
 
 == Comments ==

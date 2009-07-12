@@ -1,5 +1,6 @@
 #summary JLib - Logger - Usage
-
+#labels JLib, Logger, Usage
+#sidebar JLibTOC
 = JLib - Logger - Usage =
 
 == JLib Logger usage ==

@@ -1,5 +1,6 @@
 #summary JLib - Logger - DB Tables creation
-
+#labels JLib, Logger, DB Tables creation
+#sidebar JLibTOC
 = JLib - Logger - DB Tables creation =
 
 == Tables creation SQL statement ==
