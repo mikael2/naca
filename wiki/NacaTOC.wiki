@@ -3,6 +3,7 @@
 #sidebar
 ||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[JLib JLib]||
 
+<wiki:toc max_depth="3" />
 * [Naca01 Summary]
 * [Naca02 Whitepaper]
  * [Naca0201 Introduction]

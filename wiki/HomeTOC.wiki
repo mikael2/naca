@@ -1,25 +1,15 @@
 #summary Home - TOC
 #labels TOC, Naca, NacaRT, NacaTrans, JLib
 #sidebar
+||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[JLib JLib]||
+
 <wiki:toc max_depth="3" />
 * [Naca Naca]
  * [Naca01 Summary]
  * [Naca02 Whitepaper]
-  * [Naca0201 Introduction]
-  * [Naca0202 Transcoding and runtime concepts]
-  * [Naca0203 Required environments]
-  * [Naca0204 Tools details]
-  * [Naca0205 Testing]
-  * [Naca0206 NacaRT Cobol support]
 * [NacaTrans NacaTrans]
  * [NacaTrans01 Concept]
-  * [NacaTrans0101 Introduction]
-  * [NacaTrans0102 Configuration]
-  * [NacaTrans0103 Sample]
  * [NacaTrans02 Sample]
-  * [NacaTrans0201 Online sample transcoding]
-  * [NacaTrans0202 Eclipse/Tomcat plugin configuration]
-  * [NacaTrans0203 Execution]
 * [NacaRT NacaRT]
  * [NacaRT01 JMX Console]
  * [NacaRT02 Tests]
@@ -28,9 +18,3 @@
  * [JLib02 XML Support]
  * [JLib03 DB connection pooling]
  * [JLib04 Logger]
-  * [JLib0401 Usage]
-  * [JLib0402 Configuration]
-  * [JLib0403 Sample application]
-  * [JLib0404 Comments]
-  * [JLib0405 Tools]
-  * [JLib0406 DB Tables creation]
