@@ -1,6 +1,6 @@
 #summary NacaRT - JMX Console
 #labels NacaRT, JMX Console
-#sidebar HomeTOC
+#sidebar NacaRTTOC
 = NacaRT - JMX Console =
 
 == Introduction ==

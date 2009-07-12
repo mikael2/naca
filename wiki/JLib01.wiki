@@ -1,5 +1,6 @@
 #summary JLib - General description
-
+#labels JLib, General description
+#sidebar JLibTOC
 = JLib - General description =
 
 == Content ==

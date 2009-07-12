@@ -1,5 +1,6 @@
 #summary NacaTrans - Introduction
-
+#labels NacaTrans, Introduction
+#sidebar NacaTransTOC
 = NacaTrans - Introduction =
 
 == Introduction ==

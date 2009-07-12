@@ -1,6 +1,7 @@
-#summary NacaSamples - Execution
-
-= NacaSamples - Execution =
+#summary NacaTrans - Execution
+#labels NacaTrans, Execution
+#sidebar NacaTransTOC
+= NacaTrans - Execution =
 
 == Start Tomcat ==
 

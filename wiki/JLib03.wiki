@@ -1,5 +1,6 @@
 #summary JLib - DB connection pooling
-
+#labels JLib, DB connection pooling
+#sidebar JLibTOC
 = JLib - DB connection pooling =
 
 == Standalone DB connection pooling manager ==

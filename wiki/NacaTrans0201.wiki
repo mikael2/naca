@@ -1,6 +1,7 @@
-#summary NacaSamples - Online sample transcoding
-
-= NacaSamples - Online sample transcoding =
+#summary NacaTrans - Sample
+#labels NacaTrans, Sample
+#sidebar NacaTransTOC
+= NacaTrans - Sample =
 
 == Transcoding ==
 

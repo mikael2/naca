@@ -1,6 +1,6 @@
 #summary NacaRT - Tests
 #labels NacaRT, Tests
-#sidebar HomeTOC
+#sidebar NacaRTTOC
 = NacaRT - Tests =
 
 == Introduction ==

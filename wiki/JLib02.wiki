@@ -1,5 +1,6 @@
 #summary JLib - XML Support
-
+#labels JLib, XML Support
+#sidebar JLibTOC
 = JLib - XML Support =
 
 == XML Tag manager ==

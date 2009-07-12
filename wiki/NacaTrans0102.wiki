@@ -1,5 +1,6 @@
 #summary NacaTrans - Configuration
-
+#labels NacaTrans, Configuration
+#sidebar NacaTransTOC
 = NacaTrans - Configuration =
 
 == Configuration ==

@@ -9,6 +9,6 @@
  * [NacaTrans0102 Configuration]
  * [NacaTrans0103 Sample]
 * [NacaTrans02 Sample]
- * [NacaTrans0201 Online sample transcoding]
- * [NacaTrans0202 Eclipse/Tomcat plugin configuration]
+ * [NacaTrans0201 Sample]
+ * [NacaTrans0202 Tomcat plugin configuration]
  * [NacaTrans0203 Execution]

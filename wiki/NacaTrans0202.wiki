@@ -1,6 +1,7 @@
-#summary NacaSamples - Eclipse - Tomcat plugin configuration
-
-= NacaSamples - Eclipse - Tomcat plugin configuration =
+#summary NacaTrans - Tomcat plugin configuration
+#labels NacaTrans, Tomcat plugin configuration
+#sidebar NacaTransTOC
+= NacaTrans - Tomcat plugin configuration =
 
 == Sysdeo configuration ==
 
