@@ -1,7 +1,6 @@
 #summary Home - TOC
-#labels TOC, Naca, NacaRT, NacaTrans, JLib
-#sidebar
-<wiki:toc max_depth="3" />
+#labels TOC,Naca,NacaRT,NacaTrans,JLib
+<wiki:toc max_depth="4" />
 * [Naca Naca]
  * [Naca01 Summary]
  * [Naca02 Whitepaper]
