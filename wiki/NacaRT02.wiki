@@ -1,6 +1,7 @@
-#summary NacaRTTests - Unit Testing
-
-= NacaRTTests - Unit Testing =
+#summary NacaRT - Tests
+#labels NacaRT, Tests
+#sidebar HomeTOC
+= NacaRT - Tests =
 
 == Introduction ==
 

@@ -1,7 +1,7 @@
 #summary Naca - Whitepaper
 #labels Naca, Whitepaper
 #sidebar HomeTOC
-= NacaWhitepaper - Whitepaper =
+= Naca - Whitepaper =
 
 == Introduction ==
 

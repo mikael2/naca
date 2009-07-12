@@ -1,0 +1,6 @@
+#summary NacaTrans - Sample
+#labels NacaTrans, Sample
+#sidebar HomeTOC
+= NacaTrans - Sample =
+
+ This section is providing a sample usage of the NacaTrans module.
