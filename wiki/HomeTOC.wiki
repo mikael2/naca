@@ -17,7 +17,7 @@
   * [NacaTrans0103 Sample]
  * [NacaTrans02 Sample]
   * [NacaTrans0201 Online sample transcoding]
-  * [NacaTrans0202 Eclipse/Tomcat plugin configuration]
+  * [NacaTrans0202 Eclipse - Tomcat plugin configuration]
   * [NacaTrans0203 Execution]
 * [NacaRT NacaRT]
  * [NacaRT01 JMX Console]
