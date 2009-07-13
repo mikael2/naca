@@ -25,5 +25,3 @@
 == Tomcat configuration ==
 
  Tomcat context must also by declared (right click on NacaRT project, select "Project Tomcat", then select in popup menu "Update context".
-
- <http://NacaSamples3000image04.png>
