@@ -1,6 +1,5 @@
 #summary Home - TOC
-#labels TOC, Naca, NacaRT, NacaTrans, JLib
-#sidebar
+#labels TOC,Naca,NacaRT,NacaTrans,JLib
 ||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[JLib JLib]||
 
 <wiki:toc max_depth="2"/>
@@ -9,7 +8,7 @@
  * [Naca02 Whitepaper]
 * [NacaTrans NacaTrans]
  * [NacaTrans01 Concept]
- * [NacaTrans02 Sample]
+ * [NacaTrans02 Configuration]
 * [NacaRT NacaRT]
  * [NacaRT01 JMX Console]
  * [NacaRT02 Tests]
