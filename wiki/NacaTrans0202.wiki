@@ -1,5 +1,5 @@
 #summary NacaTrans - Tomcat plugin configuration
-#labels NacaTrans, Tomcat plugin configuration
+#labels NacaTrans,Tomcatpluginconfiguration
 #sidebar NacaTransTOC
 = NacaTrans - Tomcat plugin configuration =
 
@@ -9,16 +9,17 @@
  Server Eclispe plugin for J2EE application is not supported yet, but is planned in a near future.
 
  The Tomcat preferences (in Eclispe, menu windows/preference) must be declared as:
+ http://lh3.ggpht.com/_lKK1B4BvREU/SltIoOCrSHI/AAAAAAAAAFI/MCMRANwzlc0/s800/NacaTrans0203image01.png.jpg
 
- <http://NacaSamples3000image01.png>
+ http://lh3.ggpht.com/_lKK1B4BvREU/SltIotgViHI/AAAAAAAAAFM/_cuhhcHKbp8/s800/NacaTrans0203image02.png.jpg
 
- <http://NacaSamples3000image02.png>
+ http://lh5.ggpht.com/_lKK1B4BvREU/SltIpCx9i-I/AAAAAAAAAFQ/gG6-S95KwfQ/s800/NacaTrans0203image03.png.jpg
 
 == NacaRT configuration ==
 
  NacaRT must be declared as a Tomcat project: right click on NacaRT project, select "properties", and Choose "Tomcat"
 
- <http://NacaSamples3000image03.png>
+ http://lh4.ggpht.com/_lKK1B4BvREU/SltIpkLGuqI/AAAAAAAAAFU/YbY4F2fn5BI/s800/NacaTrans0203image04.png.jpg
 
 == Tomcat configuration ==
 
