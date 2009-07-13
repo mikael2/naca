@@ -9,6 +9,6 @@
  * [NacaTrans0102 Configuration]<br>
  * [NacaTrans0103 Sample]<br>
 * [NacaTrans02 Configuration]<br>
- * [NacaTrans0201 Sample]<br>
+ * [NacaTrans0201 Package and Paths]<br>
  * [NacaTrans0202 Tomcat plugin configuration]<br>
  * [NacaTrans0203 Execution]<br>
