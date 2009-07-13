@@ -1,7 +1,7 @@
-#summary NacaTrans - Tomcat plugin configuration
+#summary NacaTrans - Configuration - Tomcat plugin
 #labels NacaTrans,Tomcatpluginconfiguration
 #sidebar NacaTransTOC
-= NacaTrans - Tomcat plugin configuration =
+= NacaTrans - Configuration - Tomcat plugin =
 
 == Sysdeo configuration ==
 
