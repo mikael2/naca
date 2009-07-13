@@ -1,6 +1,5 @@
 #summary NacaTrans - TOC
-#labels TOC, NacaTrans
-#sidebar
+#labels TOC,NacaTrans
 ||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[JLib JLib]||
 
 == NacaTrans ==
@@ -9,7 +8,7 @@
  * [NacaTrans0101 Introduction]<br>
  * [NacaTrans0102 Configuration]<br>
  * [NacaTrans0103 Sample]<br>
-* [NacaTrans02 Sample]<br>
+* [NacaTrans02 Configuration]<br>
  * [NacaTrans0201 Sample]<br>
  * [NacaTrans0202 Tomcat plugin configuration]<br>
  * [NacaTrans0203 Execution]<br>
