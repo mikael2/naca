@@ -52,7 +52,7 @@
   * All these operation can be centrally managed by the NacaTools web-server.
 
  To sum up, showing only screen output comparisons:
- http://lh6.ggpht.com/_lKK1B4BvREU/Slrx51HggLI/AAAAAAAAAEU/ShXe79xIg8U/s144/Naca0205image01.jpg
+ http://lh6.ggpht.com/_lKK1B4BvREU/Slrx51HggLI/AAAAAAAAAEU/ShXe79xIg8U/s800/Naca0205image01.jpg
 
 === Batch testing ===
 
