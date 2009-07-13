@@ -6,7 +6,7 @@
 == Sysdeo configuration ==
 
  To launch the online sample in Eclipse, you need to install sysdeo plugin (http://www.eclipsetotale.com/tomcatPlugin.html).
- Server Eclispe plugin for J2EE application is not supported yet, but is planned in a near future.
+ Server Eclipse plugin for J2EE application is not supported yet, but is planned in a near future.
 
  The Tomcat preferences (in Eclispe, menu windows/preference) must be declared as:
 
