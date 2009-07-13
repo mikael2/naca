@@ -1,7 +1,7 @@
-#summary NacaTrans - Sample
-#labels NacaTrans, Sample
+#summary NacaTrans - Package and Paths
+#labels NacaTrans,Sample
 #sidebar NacaTransTOC
-= NacaTrans - Sample =
+= NacaTrans - Package and Paths =
 
 == Transcoding ==
 
