@@ -9,7 +9,7 @@
  The transcoder automatically reports when it needs a specific configuration file for a given program.
 
  Transcoding process:
- <http://lh3.ggpht.com/_lKK1B4BvREU/Slrx5HGg0TI/AAAAAAAAAEM/NoBVOMoZdW4/s144/Naca0202image01.jpg>
+ http://lh3.ggpht.com/_lKK1B4BvREU/Slrx5HGg0TI/AAAAAAAAAEM/NoBVOMoZdW4/s800/Naca0202image01.jpg
 
  Naca deals with Java code generation and execution.
 
