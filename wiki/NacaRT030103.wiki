@@ -27,10 +27,10 @@
  Defines the quantity of SQL prepared statements to force remove when the permanent heap size is too large.
  The prepared statements that were executed the longest time ago (and then are currently unused) are removed first.
  The sum of prepared statements removed if kept and is compared to the value of {{{conf/GCThread/NbStatementsToRemoveBeforeGC}}}.
- Only this quantity of prepared statements can be removed in one run of the GC thread
+ Only this quantity of prepared statements can be removed in one run of the GC thread.
  Removing this prepared statements happens only when the GC threads is activated.
  It's purpose it to lower the permanent heap size where prepared statements are holded, thus preventing a memory overflow.
- Ideally, prepared statement should never be removed in such a way. 
+ Ideally, prepared statement should never be removed in such a way.
  Thus, when memory is correctly tuned, this parameter must be set to {{{"0"}}}.
 
  {{{conf/GCThread/NbStatementsToRemoveBeforeGC}}}
