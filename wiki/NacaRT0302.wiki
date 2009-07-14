@@ -1,46 +1,36 @@
-#summary NacaRT - Tests
-#labels NacaRT, Tests
+#summary NacaRT - Environment parameters - Batch specific parameters
+#labels NacaRT, Environment parameters - Batch specific parameters
 #sidebar NacaRTTOC
-= NacaRT - Tests =
+= NacaRT - Environment parameters - Batch specific parameters =
 
-== Introduction ==
+== Specific parameters ==
 
- Many cobol like statements are unit-tested by the Naca sub-project NacaRTTests.
+ These settings are used only by batch programs.
+ 
+ {{{conf/TempDir}}}
+ Full path on the directory where sort temporary files are stored. The directory must exists prior to execution.
+ 
+ {{{conf/DynamicAllocationPath}}}
+ Full path name of the directory where dynamically created files are stored.
 
- These tests are not junit tests, but are in fact cobol-like hand written programs that checks semantics of transcoded verbs.
+== Batch transfer configuration == 
 
- The main.java is a launcher that executes all tests.
- If a test fails, then an excpetion is sent.
-
- It is mandatory that all tests performs correctly.
- If nacaRT is modified in some way, the tests must be checked. If a test fails dur to some modification of nacaRT, then either:
-
-  * nacaRT has a bug that is shown by the test, so nacaRT must be corrected.
-  * the test is wrong, then it must be corrected.
-
-== Tests coverage ==
-
-The various aspects covered by the tests are:
-
-  * program support
-  * copy support
-  * Working storage variable allocation
-  * Occurs item, Groups, Redefintio of variables
-  * Variable typing support
-  * Alphanumeric variable support
-  * Right justification words
-  * Numeric variable support, including Comp0, comp3, comp4 encoding, with(/out) sign
-  * Numeric edited variables support
-  * variable redefinition
-  * program calling
-  * program linking
-  * parameter passing between programs, including linkage storage section
-  * String, Unstring, Inspect, Concat handling
-  * Maths
-  * Conditions
-  * Queues
-  * Paragraph/section perform/goto
-  * Screen map defintion
-  * Screen map redefintion
-  * SQL statement
-  * misc cobol like verbs
+ {{{conf/SequencerConfig/CESMConfig/Config}}}
+ 
+ {{{
+ <Config
+       StartBatchPrefix="N"
+       StartBatchHostTest="false"
+       StartBatchHostFtpUrl="mvs.consultas.ch"
+       StartBatchHostFtpUser="CICAS"
+       StartBatchHostFtpPassword="CICAS"
+       StartBatchHostFtpSiteCommand="xlate=iso8859;FILETYPE=JES"
+       StartBatchLinuxFtpUrl="???"
+       StartBatchLinuxFtpUser="???"
+       StartBatchLinuxFtpPassword="???"
+       StartBatchLinuxFtpDirectory="???"
+       StartBatchLinuxSshCommand="???"
+       StartBatchLinuxSshPath="???"
+       StartBatchLinuxSshUser="???"
+       />
+ }}}

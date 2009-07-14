@@ -3,6 +3,4 @@
 #sidebar NacaRTTOC
 = NacaRT - Environment parameters =
 
-== Introduction ==
-
  NacaRT Environment parameters are described in the section.
