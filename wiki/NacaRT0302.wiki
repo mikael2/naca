@@ -6,7 +6,7 @@
 == Specific parameters ==
 
  These settings are used only by batch programs.
- 
+
  {{{conf/TempDir}}}
  Full path on the directory where sort temporary files are stored. The directory must exists prior to execution.
  
