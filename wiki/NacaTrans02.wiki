@@ -3,4 +3,4 @@
 #sidebar NacaTransTOC
 = NacaTrans - Configuration =
 
- This section is providing a sample usage of the NacaTrans module.
+ This section is detailing the Naca installation and configuration.
