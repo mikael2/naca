@@ -10,6 +10,7 @@
 
  The Tomcat preferences (in Eclispe, menu windows/preference) must be declared as:
 
+ http://lh6.ggpht.com/_lKK1B4BvREU/SltedqtQU_I/AAAAAAAAAGA/yUUgtsGzGKo/s800/NacaTrans0203image05.png.jpg
   http://lh3.ggpht.com/_lKK1B4BvREU/SltIoOCrSHI/AAAAAAAAAFI/MCMRANwzlc0/s800/NacaTrans0203image01.png.jpg
 
  http://lh3.ggpht.com/_lKK1B4BvREU/SltIotgViHI/AAAAAAAAAFM/_cuhhcHKbp8/s800/NacaTrans0203image02.png.jpg
