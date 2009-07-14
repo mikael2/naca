@@ -16,10 +16,9 @@
 * [NacaRT02 Tests]<br>
 * [NacaRT03 Environment parameters]<br>
  * [NacaRT0301 Common parameters]<br>
-
-  * [NacaRT030101 General parameters]<br>
-  * [NacaRT030102 Accounting]<br>
-  * [NacaRT030103 Garbage Collection]<br>
-  * [NacaRT030104 SQL Connections]<br>
+   * [NacaRT030101 General parameters]<br>
+   * [NacaRT030102 Accounting]<br>
+   * [NacaRT030103 Garbage Collection]<br>
+   * [NacaRT030104 SQL Connections]<br>
  * [NacaRT0302 Batch specific parameters]<br>
  * [NacaRT0303 Online specific parameters]<br>
