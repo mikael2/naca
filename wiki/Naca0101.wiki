@@ -1,6 +1,6 @@
 #summary Naca - Presentation - Rationale and Strategy
 #labels Naca, Presentation - Rationale and Strategy
-#sidebar NacaTOC - 
+#sidebar NacaTOC 
 = Naca - Presentation - Rationale and Strategy =
 
 == Overview ==
