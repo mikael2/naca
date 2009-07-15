@@ -1,7 +1,7 @@
-#summary NacaRT - Environment parameters - Common parameters
-#labels NacaRT, Environment parameters - Common parameters
+#summary NacaRT - Configuration - Common parameters
+#labels NacaRT, Configuration - Common parameters
 #sidebar NacaRTTOC
-= NacaRT - Environment parameters - Common parameters =
+= NacaRT - Configuration - Common parameters =
 
  All nacaRT shares some settings, whatever their execution mode (online, batch, stored procedure).
 

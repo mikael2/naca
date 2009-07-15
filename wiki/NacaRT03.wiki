@@ -1,6 +1,6 @@
-#summary NacaRT - Environment parameters
-#labels NacaRT, Environment parameters
+#summary NacaRT - Configuration
+#labels NacaRT, Configuration
 #sidebar NacaRTTOC
-= NacaRT - Environment parameters =
+= NacaRT - Configuration =
 
- NacaRT Environment parameters are described in the section.
+ NacaRT configuration parameters are described in this section.

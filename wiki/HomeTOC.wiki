@@ -12,7 +12,7 @@
 * [NacaRT NacaRT]
  * [NacaRT01 JMX Console]
  * [NacaRT02 Tests]
- * [NacaRT03 Environment parameters]
+ * [NacaRT03 Configuration]
 * [JLib JLib]
  * [JLib01 General description]
  * [JLib02 XML Support]

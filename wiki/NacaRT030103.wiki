@@ -1,7 +1,7 @@
-#summary NacaRT - Environment parameters - Common parameters - Garbage Collection
-#labels NacaRT, Environment parameters - Common parameters - Garbage Collection
+#summary NacaRT - Configuration - Common parameters - Garbage Collection
+#labels NacaRT, Configuration - Common parameters - Garbage Collection
 #sidebar NacaRTTOC
-= NacaRT - Environment parameters - Common parameters - Garbage Collection =
+= NacaRT - Configuration - Common parameters - Garbage Collection =
 
 == Configuration ==
 

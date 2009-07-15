@@ -1,7 +1,7 @@
-#summary NacaRT - Environment parameters - Common parameters - Accounting
-#labels NacaRT, Environment parameters - Common parameters - Accounting
+#summary NacaRT - Configuration - Common parameters - Accounting
+#labels NacaRT, Configuration - Common parameters - Accounting
 #sidebar NacaRTTOC
-= NacaRT - Environment parameters - Common parameters - Accounting =
+= NacaRT - Configuration - Common parameters - Accounting =
 
 == Configuration ==
 

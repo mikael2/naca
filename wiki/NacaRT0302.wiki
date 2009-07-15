@@ -1,7 +1,7 @@
-#summary NacaRT - Environment parameters - Batch specific parameters
-#labels NacaRT, Environment parameters - Batch specific parameters
+#summary NacaRT - Configuration - Batch specific parameters
+#labels NacaRT, Configuration - Batch specific parameters
 #sidebar NacaRTTOC
-= NacaRT - Environment parameters - Batch specific parameters =
+= NacaRT - Configuration - Batch specific parameters =
 
 == Specific parameters ==
 
