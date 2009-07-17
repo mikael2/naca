@@ -1,8 +1,8 @@
 #summary Naca - Presentation - Rationale and Strategy
-#labels Naca, Presentation
+#labels Naca,Presentation
 #sidebar NacaTOC
 
-= What is Naca? [Naca0201 click here] =
+= What is Naca is described here! =
 
 = Naca - Presentation - Rationale and Strategy =
 
@@ -22,14 +22,14 @@
 == Project name ==
 
  The meaning of the project:
-  * in French, NACA = "Nouvelle Architecture Centrale d’Applications"
+  * in French, NACA = "Nouvelle Architecture Centrale dï¿½Applications"
   * in English, NACA = "New Architecture for Core Applications"
 
 == Project goal ==
 
  The aim was to transfer the homegrown administrative application (called PUB 2000 - developed at the end of the eighties) to state-of-the-art technologies, i.e modern and efficient.
 
- As the title of the article and the project acronym imply, NACA was launched within Publicitas (Lausanne, Switzerland) to initially convert an IBM mainframe model G5 operated through the standard palette of “big iron” software (MVS/OS390/zOS, CICS, COBOL, DB2) toward its canonical equivalent in the Open Source world: Linux, Java, Tomcat, UDB.
+ As the title of the article and the project acronym imply, NACA was launched within Publicitas (Lausanne, Switzerland) to initially convert an IBM mainframe model G5 operated through the standard palette of ï¿½big ironï¿½ software (MVS/OS390/zOS, CICS, COBOL, DB2) toward its canonical equivalent in the Open Source world: Linux, Java, Tomcat, UDB.
 
 == Project origin ==
 
@@ -39,12 +39,12 @@
  Our own activity is around 750'000 transactions done by approx. 1'500 internal users.
 
  From another perspective, the highly successful startups of that time like Google were demonstrating that Linux can be the cornerstone of a very large scale infrastructure delivering a complex service over the Internet.
- By that time, it wasn’t yet through 1 million servers delivering 120 billions pages per month but the load level of Google was already far higher than ours.
- About reliability, the proven resilience / reliability of Open Source is best described by Linus’ law (Linus = Linus Torwald, father of Linux) made famous in the essay of Eric Raymond named "The Cathedral and the Bazaar": "given enough eyeballs, all bugs are shallow".
+ By that time, it wasnï¿½t yet through 1 million servers delivering 120 billions pages per month but the load level of Google was already far higher than ours.
+ About reliability, the proven resilience / reliability of Open Source is best described by Linusï¿½ law (Linus = Linus Torwald, father of Linux) made famous in the essay of Eric Raymond named "The Cathedral and the Bazaar": "given enough eyeballs, all bugs are shallow".
 
  All lights were green. So, it has been decided to launch the project knowing that many hurdles and unknowns were still in front of us. 
  Such a full migration from a mainframe under zOS was (minimally) to be considered as pioneer work.
- Some even said by that time that it was crazy or heretic…
+ Some even said by that time that it was crazy or hereticï¿½
 
 == Business Model ==
 
@@ -61,9 +61,9 @@
 
 == Project objectives and guidelines ==
 
- * Progressive migration: the one-shot "big bang" of a global migration from the old system toward the new one, implemented over a single week-end was banned from day 1 and for ever. All team members knew internal or external “big bang” projects that failed after a couple of unsuccessful “big step” trials. So, we decided to build our project path rather than as a very long stairway with as steps as possible, those steps being as small as possible. The idea was to achieve many incremental and irrevocable (but always reversible) successes.
+ * Progressive migration: the one-shot "big bang" of a global migration from the old system toward the new one, implemented over a single week-end was banned from day 1 and for ever. All team members knew internal or external ï¿½big bangï¿½ projects that failed after a couple of unsuccessful ï¿½big stepï¿½ trials. So, we decided to build our project path rather than as a very long stairway with as steps as possible, those steps being as small as possible. The idea was to achieve many incremental and irrevocable (but always reversible) successes.
  
- * 100% automatic and strictly iso-functional trans-coding: we did not want to mix genders between technology update and application improvement. This confusion inevitably leads to additional constraints becoming lethal most of time. So, we decided to migrate each COBOL function to its strictest equivalent in Java. So, at the end of the project, just the same application but delivering the same value for a drastically reduced cost. In addition, the automatic (i.e. costless) trans-coding means that the Cobol maintenance doesn’t have to be interrupted: the next run of the transcoder transfers the newly implemented Cobol code to its Java equivalent. So, the end users remain happy while the system engineers achieve their technological marathon over the many years of such a project.
+ * 100% automatic and strictly iso-functional trans-coding: we did not want to mix genders between technology update and application improvement. This confusion inevitably leads to additional constraints becoming lethal most of time. So, we decided to migrate each COBOL function to its strictest equivalent in Java. So, at the end of the project, just the same application but delivering the same value for a drastically reduced cost. In addition, the automatic (i.e. costless) trans-coding means that the Cobol maintenance doesnï¿½t have to be interrupted: the next run of the transcoder transfers the newly implemented Cobol code to its Java equivalent. So, the end users remain happy while the system engineers achieve their technological marathon over the many years of such a project.
  
  * continuation with teams in place: the employees loyal to the company and its IT system over 20 years are the best experts to execute a smooth migration. Knowing that system engineer spend their career learning new technologies, shifting to Linux is just another milestone on this road. We just added a couple of linux- and OSS-oriented "rookies" to accelerate the technology adoption.
 
@@ -73,7 +73,7 @@
 
  The advantage of this bottom-up progression is clear: the existing systems engineers are the first employees to get involved. As such, they become clearly the owners of the new system and master all the Linux and other OSS technologies before anybody else. They feel then highly comfortable and have no fear of being displaced when the developers enter the game a few months later.
 
- From another perspective, the iso-functional transcoding to Java is essential: by using such a cross-compiling tool (that we ended up developing by ourselves in order to achieve the 100% automation that we targeted initially - I’ll come back on that in a subsequent article), the functional maintenance of application is never interrupted. All changes made to Cobol are smoothly, instantly and at no cost transferred to the Java version in the next run of the transcoder (almost done on an hourly basis).
+ From another perspective, the iso-functional transcoding to Java is essential: by using such a cross-compiling tool (that we ended up developing by ourselves in order to achieve the 100% automation that we targeted initially - Iï¿½ll come back on that in a subsequent article), the functional maintenance of application is never interrupted. All changes made to Cobol are smoothly, instantly and at no cost transferred to the Java version in the next run of the transcoder (almost done on an hourly basis).
 
  This relieves a very important constraint on the new Java / OSS version of the application: no firm release date is really needed from a functional standpoint. If, let say, a new legal function was implemented only in the new Java version after hand-tweaking of the half-baked java code, a delay on the productive release of the Java version could be dramatic for the entire project.
 
@@ -85,12 +85,12 @@
 
  Last but not least, we wanted keep the very loyal teams in place even though the entire system was eventually changed. We offered all of them a very intensive OSS training package. The motivations were those:
 
-  * Such a migration can’t succeed without full support of the team mastering the legacy system. Ten of thousands of tiny details (Remember: the devil is in them!) have to be handled for the project to succeed. So, hoping to generate competition by trying to oppose the young wolves of OSS to the old crocodiles of legacy mainframe would be a clear fatal mistake.
-  * Most system engineers are used to change the horse that they ride (i.e the operating system that they master) many times over their career. At the end of the day, this is just another occurrence of such a switch! When they see that the world around them is deeply changing around them through a massive migration toward OSS, they welcome (with minimal resistance to change) any opportunity that allow them and their competences to also switch through a good training. Fundamentally, they are more experts in system architecture than in any specific operating system. It means that they just have to learn a new set of “bits and bytes” habits to transfer their expertise to the world of Linux and OSS. The core fundamentals of most operating systems remains essentially the same whatever the name of the OS is! It is just another command syntax and parameter definition format to learn...
+  * Such a migration canï¿½t succeed without full support of the team mastering the legacy system. Ten of thousands of tiny details (Remember: the devil is in them!) have to be handled for the project to succeed. So, hoping to generate competition by trying to oppose the young wolves of OSS to the old crocodiles of legacy mainframe would be a clear fatal mistake.
+  * Most system engineers are used to change the horse that they ride (i.e the operating system that they master) many times over their career. At the end of the day, this is just another occurrence of such a switch! When they see that the world around them is deeply changing around them through a massive migration toward OSS, they welcome (with minimal resistance to change) any opportunity that allow them and their competences to also switch through a good training. Fundamentally, they are more experts in system architecture than in any specific operating system. It means that they just have to learn a new set of ï¿½bits and bytesï¿½ habits to transfer their expertise to the world of Linux and OSS. The core fundamentals of most operating systems remains essentially the same whatever the name of the OS is! It is just another command syntax and parameter definition format to learn...
 
  Such a migration from proprietary world also brings intangibles advantages that are eventually almost as important (more important than ?) as the very sexy financial fact-based ROI that you can demonstrate for such a project.
 
- Those intangibles advantages can be presented in one sentence: "we are back in the market". And even if you can’t equate this to euros, it has a clear value:
+ Those intangibles advantages can be presented in one sentence: "we are back in the market". And even if you canï¿½t equate this to euros, it has a clear value:
 
  * you can hire new engineers in a much simpler way: mainframe system engineers tend to become rare and then expensive!
 
