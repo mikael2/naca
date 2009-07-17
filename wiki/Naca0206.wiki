@@ -1,6 +1,9 @@
 #summary Naca - Whitepaper - NacaRT Cobol support
-#labels Naca, Whitepaper, NacaRT Cobol support
+#labels Naca, Whitepaper
 #sidebar NacaTOC
+
+= What is Naca? [Naca0201 click here] =
+
 = Naca - Whitepaper - NacaRT Cobol support =
 
 == Introduction ==

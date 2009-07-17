@@ -1,6 +1,9 @@
 #summary NacaTrans - Configuration - Tomcat manager.xml                                         
-#labels NacaTrans,Configuration,Tomcat manager.xml                                              
-#sidebar NacaTransTOC                                                                       
+#labels NacaTrans, Configuration
+#sidebar NacaTransTOC           
+
+= What is Naca? [Naca0201 click here] =
+                                                            
 = NacaTrans - Configuration - Tomcat manager.xml =                                              
                                                                                             
 The file {{{C:\Program Files\Apache Software Foundation\Tomcat 5.5\conf\Catalina\localhost\manager.xml}}} must contain:

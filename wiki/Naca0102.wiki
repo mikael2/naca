@@ -1,6 +1,9 @@
 #summary Naca - Presentation - Open Source contribution
-#labels Naca, Presentation, Open Source contribution
+#labels Naca, Presentation
 #sidebar NacaTOC
+
+= What is Naca? [Naca0201 click here] =
+
 = Naca - Presentation - Open Source contribution =
 
 == Overview ==

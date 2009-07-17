@@ -1,6 +1,9 @@
 #summary NacaRT - JMX Console - Log
-#labels NacaRT, JMX Console, Log
+#labels NacaRT, JMX Console
 #sidebar NacaRTTOC
+
+= What is Naca? [Naca0201 click here] =
+
 == NacaRT - JMX Console - Log ==
 
 ===  Configuration of a log: format (xxx) ===

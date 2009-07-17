@@ -1,6 +1,9 @@
 #summary JLib - Logger - Configuration
-#labels JLib, Logger, Configuration
+#labels JLib, Logger
 #sidebar JLibTOC
+
+= What is Naca? [Naca0201 click here] =
+
 = JLib - Logger - Configuration =
 
 == JLib Logger configuration file format settings ==

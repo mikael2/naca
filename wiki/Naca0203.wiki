@@ -1,6 +1,9 @@
 #summary Naca - Whitepaper - Required environments
-#labels Naca, Whitepaper, Required environments
+#labels Naca, Whitepaper
 #sidebar NacaTOC
+
+= What is Naca? [Naca0201 click here] =
+
 = Naca - Whitepaper - Required environments =
 
 == Introduction ==
