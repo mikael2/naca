@@ -1,5 +1,5 @@
 #summary Home - TOC
-#labels TOC,Naca,NacaRT,NacaTrans,JLib
+#labels TOC,Naca,NacaRT,NacaTrans,JLib,Featured
 ||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[JLib JLib]||
 
 <wiki:toc max_depth="2"/>
