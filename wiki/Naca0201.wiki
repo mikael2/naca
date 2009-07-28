@@ -1,5 +1,5 @@
 #summary Naca - Whitepaper - Introduction
-#labels Naca, Whitepaper
+#labels Naca,Whitepaper,Featured
 #sidebar NacaTOC
 
 = What is Naca? [Naca0201 click here] =
