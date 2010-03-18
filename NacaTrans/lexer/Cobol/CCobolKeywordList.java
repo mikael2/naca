@@ -88,6 +88,7 @@ public class CCobolKeywordList extends CKeywordList
 	public static CReservedKeyword DYNAMIC = new CReservedKeyword(List, "DYNAMIC") ; 
 	public static CReservedKeyword ACCESS = new CReservedKeyword(List, "ACCESS") ; 
 	public static CReservedKeyword SEPARATE = new CReservedKeyword(List, "SEPARATE") ; 
+	public static CReservedKeyword CHARACTER = new CReservedKeyword(List, "CHARACTER") ;
 	public static CReservedKeyword TRAILING = new CReservedKeyword(List, "TRAILING") ; 
 	public static CReservedKeyword SIGN = new CReservedKeyword(List, "SIGN") ; 
 	public static CReservedKeyword READPREV = new CReservedKeyword(List, "READPREV") ; 
