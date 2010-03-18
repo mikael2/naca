@@ -3,7 +3,7 @@
 		<row>
 			<col>
 				<vbox>
-					<image ref="images/logo_publicitas.gif" width="192" height="66"/>
+					<image ref="images/logo.gif" width="192" height="66"/>
 				</vbox>
 				<pageinfo/>
 				<pfkeylist>
