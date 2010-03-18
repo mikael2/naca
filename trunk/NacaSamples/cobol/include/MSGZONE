@@ -1,3 +1,0 @@
-       01  MSG-ZONE.
-           05 MSG-NO               PIC  X(4)         VALUE SPACE.
-           05 MSG-TEXT             PIC  X(78)        VALUE SPACE.
