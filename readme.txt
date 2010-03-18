@@ -1,1 +1,0 @@
-Read the readme.txt file in the readme directory.
