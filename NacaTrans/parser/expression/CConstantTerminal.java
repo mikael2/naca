@@ -128,12 +128,12 @@ public class CConstantTerminal extends CTerminal
 			Reporter.Add("Modif_PJ", "Constant SQL_NULL");
 			return factory.NewEntitySQLNull();
 		}
-		else if (m_csValue.equals("LOW-VALUE"))	// PJD Added PJ
+		else if (m_csValue.equals("LOW-VALUE") || m_csValue.equals("LOW-VALUES"))	// PJD Added PJ + CT Added for full support
 		{
 			Reporter.Add("Modif_PJ", "Constant LOW_VALUE");
 			return factory.NewEntityConstant(CEntityConstant.Value.LOW_VALUE);
 		}
-		else if (m_csValue.equals("HIGH-VALUE"))	// PJD Added PJ
+		else if (m_csValue.equals("HIGH-VALUE") || m_csValue.equals("HIGH-VALUES"))	// PJD Added PJ + CT Added for full support
 		{
 			return factory.NewEntityConstant(CEntityConstant.Value.HIGH_VALUE);
 		}

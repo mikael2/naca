@@ -477,14 +477,7 @@ public class CExecSQLUpdate extends CBaseExecSQLAction
 		if (table == null)
 		{
 			CGlobalEntityCounter.GetInstance().RegisterProgramToRewrite(parent.GetProgramName(), getLine(), "Missing table declaration : "+m_csViewName);
-			if (m_csViewName.startsWith("V") && m_csViewName.length() > 6)
-			{
-				tablename = m_csViewName.substring(1, m_csViewName.length()-1) ;
-			}
-			else
-			{
-				tablename = m_csViewName ;
-			}
+			tablename = m_csViewName ;
 		}
 		else
 		{
