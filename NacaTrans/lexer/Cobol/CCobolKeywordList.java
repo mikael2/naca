@@ -241,6 +241,7 @@ public class CCobolKeywordList extends CKeywordList
 	public static CReservedKeyword COMP_4 = new CReservedKeyword(List, "COMP-4") ; 
 	public static CReservedKeyword COMP_3 = new CReservedKeyword(List, "COMP-3") ;
 	public static CReservedKeyword COMPUTATIONAL_3 = new CReservedKeyword(List, "COMPUTATIONAL-3") ;	// PJD Added
+	public static CReservedKeyword COMPUTATIONAL_4 = new CReservedKeyword(List, "COMPUTATIONAL-4") ;	// CT Added
 	public static CReservedKeyword SYNC = new CReservedKeyword(List, "SYNC") ; 
 	public static CReservedKeyword VALUE = new CReservedKeyword(List, "VALUE") ; 
 	public static CReservedKeyword FILLER = new CReservedKeyword(List, "FILLER") ; 
