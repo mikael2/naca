@@ -64,11 +64,11 @@ public abstract class CEntityEnvironmentVariable extends CDataEntity
 		{
 			eCond.SetIsSpace(this);
 		}
-		else if (value.equals("LOW-VALUE"))
+		else if (value.equals("LOW-VALUE") || value.equals("LOW-VALUES")) // CT Added for full support
 		{
 			eCond.SetIsLowValue(this);
 		}
-		else if (value.equals("HIGH-VALUE"))
+		else if (value.equals("HIGH-VALUE") || value.equals("HIGH-VALUES")) // CT Added for full support
 		{
 			eCond.SetIsHighValue(this);
 		}

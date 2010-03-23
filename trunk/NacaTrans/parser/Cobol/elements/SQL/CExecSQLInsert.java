@@ -532,10 +532,6 @@ public class CExecSQLInsert extends CBaseExecSQLAction
 
 	protected CBaseLanguageEntity DoCustomSemanticAnalysis(CBaseLanguageEntity parent, CBaseEntityFactory factory)
 	{
-		if(this.getLine() == 1313)
-		{
-			int gg = 0;
-		}
 		CEntitySQLInsertStatement eSQL = factory.NewEntitySQLInsertStatement(getLine());
 		parent.AddChild(eSQL) ;
 		
@@ -544,14 +540,7 @@ public class CExecSQLInsert extends CBaseExecSQLAction
 		if (table == null)
 		{
 			CGlobalEntityCounter.GetInstance().RegisterProgramToRewrite(parent.GetProgramName(), getLine(), "Missing table declaration : "+m_csTable);
-			if (m_csTable.startsWith("V") && m_csTable.length() > 6)
-			{
-				tablename = m_csTable.substring(1, m_csTable.length()-1) ;
-			}
-			else
-			{
-				tablename = m_csTable ;
-			}
+			tablename = m_csTable ;
 		}
 		else 
 		{

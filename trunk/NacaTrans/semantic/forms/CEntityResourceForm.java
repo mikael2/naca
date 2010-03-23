@@ -145,7 +145,7 @@ public abstract class CEntityResourceForm extends CBaseResourceEntity
 		{
 			eAssign.SetToSpace(this) ;
 		}
-		else if (value.equals("LOW-VALUE"))
+		else if (value.equals("LOW-VALUE") || value.equals("LOW-VALUES")) // CT Added for full support
 		{
 			CEntityInitialize init = factory.NewEntityInitialize(l, this) ;
 			RegisterWritingAction(init) ;

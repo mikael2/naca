@@ -98,25 +98,7 @@ public class CExecSQLDeclareTable extends CBaseExecSQLAction
 	{
 		CheckTabViewRenamed() ;
 		String csActualTableName = "" ;
-		if (m_csTableName.startsWith("V"))
-		{
-			String table = (String)ms_tabViewRenamed.get(m_csTableName);
-			if (table == null)
-			{
-				if (m_csTableName.length() > 6)
-					csActualTableName = m_csTableName.substring(1, m_csTableName.length()-1);
-				else
-					csActualTableName = m_csTableName;
-			}
-			else
-			{
-				csActualTableName = table ;
-			}
-		}
-		else
-		{
-			csActualTableName = m_csTableName ;
-		}
+		csActualTableName = m_csTableName ;
 		CEntitySQLDeclareTable eSQL = factory.NewEntitySQLDeclareTable(getLine(), csActualTableName, m_csTableName, m_arrTableColDescription);
 		parent.AddChild(eSQL) ;
 		return eSQL;	

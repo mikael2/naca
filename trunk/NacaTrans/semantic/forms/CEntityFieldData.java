@@ -78,11 +78,11 @@ public abstract class CEntityFieldData extends CBaseEntityFieldAttribute
 		{
 			eCond.SetIsSpace(m_Reference);
 		}
-		else if (value.equals("LOW-VALUE"))
+		else if (value.equals("LOW-VALUE") || value.equals("LOW-VALUES")) // CT Added for full support
 		{
 			eCond.SetIsLowValue(m_Reference);
 		}
-		else if (value.equals("HIGH-VALUE"))
+		else if (value.equals("HIGH-VALUE") || value.equals("HIGH-VALUES"))  // CT Added for full support
 		{
 			eCond.SetIsHighValue(m_Reference);
 		}
@@ -124,7 +124,7 @@ public abstract class CEntityFieldData extends CBaseEntityFieldAttribute
 		{
 			eAssign.SetToSpace(m_Reference) ;
 		}
-		else if (value.equals("LOW-VALUE"))
+		else if (value.equals("LOW-VALUE") || value.equals("LOW-VALUES")) // CT Added for full support
 		{	
 			eAssign.SetToLowValue(m_Reference) ;
 		}

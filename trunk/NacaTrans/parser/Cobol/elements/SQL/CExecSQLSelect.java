@@ -513,11 +513,6 @@ public class CExecSQLSelect extends CBaseExecSQLAction
 				{
 					CGlobalEntityCounter.GetInstance().RegisterProgramToRewrite(factory.m_ProgramCatalog.getProcedureDivision().GetProgramName(), 0, "Missing table declaration : "+cs);
 				}
-				if (cs.startsWith("V") && cs.length() > 6)
-				{
-					tablename = cs.substring(1, cs.length()-1) ;
-					from = from.replaceFirst(cs, tablename) ;
-				}
 			}
 			if (bCursor)
 			{

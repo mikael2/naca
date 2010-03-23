@@ -238,11 +238,11 @@ public abstract class CEntityResourceField extends CBaseResourceEntity  implemen
 		{
 			eAssign.SetToSpace(this) ;
 		}
-		else if (value.equals("LOW-VALUE"))
+		else if (value.equals("LOW-VALUE") || value.equals("LOW-VALUES")) // CT Added for full support
 		{	 
 			eAssign.SetToLowValue(this) ;
 		}
-		else if (value.equals("HIGH-VALUE"))
+		else if (value.equals("HIGH-VALUE") || value.equals("HIGH-VALUES"))  // CT Added for full support
 		{	 
 			eAssign.SetToHighValue(this) ;
 		}
@@ -321,7 +321,7 @@ public abstract class CEntityResourceField extends CBaseResourceEntity  implemen
 			{
 				eCond.SetIsLowValue(this);
 			}
-			else if (value.equals("HIGH-VALUE"))
+			else if (value.equals("HIGH-VALUE") || value.equals("HIGH-VALUES")) // CT Added for full support
 			{
 				eCond.SetIsHighValue(this);
 			}
@@ -367,7 +367,7 @@ public abstract class CEntityResourceField extends CBaseResourceEntity  implemen
 				RegisterVarTesting(eCond) ;
 				return eCond ;
 			}
-			else if (type == CBaseEntityCondition.EConditionType.IS_GREATER_THAN && value.equals("LOW-VALUE"))
+			else if (type == CBaseEntityCondition.EConditionType.IS_GREATER_THAN &&(value.equals("LOW-VALUE") || value.equals("LOW-VALUES"))) // CT Added for full support
 			{
 				eCond.SetOpposite() ;
 				RegisterVarTesting(eCond) ;

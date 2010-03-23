@@ -229,7 +229,7 @@ public abstract class CEntityAttribute extends CGenericDataEntityReference imple
 		{
 			eCond.SetIsSpace(this);
 		}
-		else if (value.equals("LOW-VALUE"))
+		else if (value.equals("LOW-VALUE") || value.equals("LOW-VALUES")) // CT Added for full support
 		{
 			eCond.SetIsLowValue(this);
 		}
@@ -281,12 +281,12 @@ public abstract class CEntityAttribute extends CGenericDataEntityReference imple
 		{
 			return eCond ;
 		}
-		else if (type == CBaseEntityCondition.EConditionType.IS_LESS_THAN && value.equals("HIGH-VALUE"))
+		else if (type == CBaseEntityCondition.EConditionType.IS_LESS_THAN && (value.equals("HIGH-VALUE") || value.equals("HIGH-VALUES"))) // CT Added for full support
 		{
 			eCond.SetOpposite() ;
 			return eCond ;
 		}
-		else if (type == CBaseEntityCondition.EConditionType.IS_GREATER_THAN && value.equals("LOW-VALUE"))
+		else if (type == CBaseEntityCondition.EConditionType.IS_GREATER_THAN && (value.equals("LOW-VALUE") || value.equals("LOW-VALUES"))) // CT Added for full support
 		{
 			eCond.SetOpposite() ;
 			return eCond ;
