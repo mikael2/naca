@@ -1,0 +1,32 @@
+
+0. Contacts
+
+Please use the following contact information for details:
+Web site: technology.publicitas.com
+email: naca-contact@publicitas.com
+
+1. Licencing
+
+Copyright (c) 2005, 2006, 2007, 2008 Publicitas SA.
+JLib and NacaRT are licensed under LGPL (LGPL-LICENSE.txt) license.
+NacaRTTests and NacaTrans are licensed under GPL (GPL-LICENSE.txt) license.
+
+2. Documentation
+
+2.1. Readme.txt
+
+It's this file !
+
+2.2. Whitepaper
+
+Launch your favorite browser on doc/WhitePaper/NacaWhitePaper.htm to access Naca's whitepaper. 
+
+2.3. Details on Java libraries and operations: JLib / NacaRT
+
+Launch your favorite browser on doc/doc/JLib_NacaRT/index.html for implementation details of those two critical libraries.
+
+2.4. Details on Transcoder: NacaTrans
+
+Transcoder usage and implementation is not publicly documented yet. Please send an email at naca-contact@publicitas.com to get futher details.
+However, NacaTrans transcoder source code is provided in the NacaTrans project.
+
