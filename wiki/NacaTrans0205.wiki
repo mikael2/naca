@@ -2,7 +2,7 @@
 #labels NacaTrans, Configuration
 #sidebar NacaTransTOC                                                                       
 
-= What is Naca? [-->Naca0201 click here] =
+= What is Naca? -->[Naca0201 click here] =
 
 = NacaTrans - Configuration - Tomcat server.xml =                                              
                                                                                             

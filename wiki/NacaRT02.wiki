@@ -2,7 +2,7 @@
 #labels NacaRT, Tests
 #sidebar NacaRTTOC
 
-= What is Naca? [-->Naca0201 click here] =
+= What is Naca? -->[Naca0201 click here] =
 
 = NacaRT - Tests =
 

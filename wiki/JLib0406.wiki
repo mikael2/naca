@@ -2,7 +2,7 @@
 #labels JLib, Logger
 #sidebar JLibTOC
 
-= What is Naca? [-->Naca0201 click here] =
+= What is Naca? -->[Naca0201 click here] =
 
 = JLib - Logger - DB Tables creation =
 

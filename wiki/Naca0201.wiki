@@ -2,7 +2,7 @@
 #labels Naca,Whitepaper,Featured
 #sidebar NacaTOC
 
-= What is Naca? [-->Naca0201 click here] =
+= What is Naca? -->[Naca0201 click here] =
 
 = Naca - Whitepaper - Introduction =
 
