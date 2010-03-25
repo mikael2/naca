@@ -5,7 +5,7 @@
 
 == JLib ==
 <wiki:toc max_depth="2"/>
-* [JLib01 General description]<br>
+* [JLib01 Overview]<br>
 * [JLib02 XML Support]<br>
 * [JLib03 DB connection pooling]<br>
 * [JLib04 Logger]<br>

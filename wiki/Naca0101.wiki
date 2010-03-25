@@ -2,7 +2,7 @@
 #labels Naca,Presentation
 #sidebar NacaTOC
 
-= What is Naca is described here! =
+= What is Naca is described in this page! =
 
 = Naca - Presentation - Rationale and Strategy =
 

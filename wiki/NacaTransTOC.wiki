@@ -4,7 +4,7 @@
 
 == NacaTrans ==
 <wiki:toc max_depth="2"/>
-* [NacaTrans01 Concept]<br>
+* [NacaTrans01 Overview]<br>
  * [NacaTrans0101 Introduction]<br>
  * [NacaTrans0102 Configuration]<br>
  * [NacaTrans0103 Sample]<br>

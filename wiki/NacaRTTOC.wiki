@@ -6,7 +6,7 @@
 * [NacaRT01 JMX Console]<br>
  * [NacaRT0101 Elements]<br>
  * [NacaRT0102 MBeans]<br>
- * [NacaRT0103 Log]<br>
+ * [NacaRT0103 Logging]<br>
  * [NacaRT0104 Resources files]<br>
  * [NacaRT0105 Screen ressources]<br>
  * [NacaRT0106 General statistics]<br>
