@@ -1,6 +1,7 @@
 #summary NacaTrans - TOC
 #labels TOC,NacaTrans
-||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[JLib JLib]||
+#sidebar
+||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[NacaSamples NacaSamples]||[JLib JLib]||
 
 == NacaTrans ==
 <wiki:toc max_depth="2"/>

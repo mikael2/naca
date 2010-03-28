@@ -1,6 +1,7 @@
 #summary NacaRT - TOC
 #labels TOC,NacaRT
-||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[JLib JLib]||
+#sidebar
+||[Naca Naca]||[NacaTrans NacaTrans]||[NacaRT NacaRT]||[NacaSamples NacaSamples]||[JLib JLib]||
 
 == NacaRT ==
 * [NacaRT01 JMX Console]<br>
